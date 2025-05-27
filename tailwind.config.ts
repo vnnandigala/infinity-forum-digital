@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -84,11 +85,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'delay-200': 'fade-in 0.6s ease-out 0.2s both',
+				'delay-400': 'fade-in 0.6s ease-out 0.4s both',
+				'delay-600': 'fade-in 0.6s ease-out 0.6s both',
+				'delay-800': 'fade-in 0.6s ease-out 0.8s both'
 			}
 		}
 	},
