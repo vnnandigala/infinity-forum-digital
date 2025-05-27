@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Infinity } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
       {/* Background pattern */}
@@ -37,10 +40,19 @@ const Hero = () => {
           engaged in transformative dialogue on the many dimensions of human well-being.
         </p>
 
-        {/* CTA Button */}
-        <div className="animate-fade-in animate-delay-800">
-          <button className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-12 py-4 rounded-full text-lg font-semibold hover:from-amber-400 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-800">
+          <button 
+            onClick={() => navigate('/contact')}
+            className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-12 py-4 rounded-full text-lg font-semibold hover:from-amber-400 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+          >
             Join the Forum
+          </button>
+          <button 
+            onClick={() => navigate('/contact')}
+            className="border-2 border-amber-500 text-amber-500 px-12 py-4 rounded-full text-lg font-semibold hover:bg-amber-500 hover:text-slate-900 transform hover:scale-105 transition-all duration-300"
+          >
+            Contact Us
           </button>
         </div>
       </div>

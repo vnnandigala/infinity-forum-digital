@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,14 +39,14 @@ const ContactForm = () => {
               The Infinity Forum and we'll connect with you about membership opportunities.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-6 mb-8">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-slate-900" />
                 </div>
                 <div>
                   <p className="text-white font-semibold">Email</p>
-                  <p className="text-slate-300">info@infinityforum.com</p>
+                  <p className="text-slate-300">unandigala@gmail.com</p>
                 </div>
               </div>
 
@@ -54,7 +56,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-white font-semibold">Phone</p>
-                  <p className="text-slate-300">+1 (555) 123-4567</p>
+                  <p className="text-slate-300">248-295-1770</p>
                 </div>
               </div>
 
@@ -68,6 +70,13 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
+
+            <button
+              onClick={() => navigate('/contact')}
+              className="bg-gradient-to-r from-amber-500 to-yellow-600 text-slate-900 px-8 py-3 rounded-lg font-semibold hover:from-amber-400 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Apply for Membership
+            </button>
           </div>
 
           {/* Contact Form */}
