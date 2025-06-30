@@ -7,46 +7,20 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
-      {/* Animated Nature Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
       <div className="absolute inset-0">
-        {/* Primary animated gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-teal-800/30 to-cyan-900/20 animate-pulse"></div>
-        
-        {/* Secondary moving gradient */}
-        <div 
-          className="absolute inset-0 opacity-60"
-          style={{
-            background: 'linear-gradient(45deg, rgba(6, 78, 59, 0.3), rgba(17, 94, 89, 0.4), rgba(21, 94, 117, 0.3))',
-            animation: 'gradientShift 8s ease-in-out infinite alternate'
-          }}
-        ></div>
-
-        {/* Floating particles */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${Math.random() * 4 + 2}px`,
-                height: `${Math.random() * 4 + 2}px`,
-                animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 2}s`
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Subtle pattern overlay */}
-        <div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23065f46' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}
-        ></div>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/lovable bvackground.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
       
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
@@ -72,6 +46,17 @@ const Hero = () => {
           A private community of influential wealth creators, visionary leaders, and deep thinkers 
           engaged in transformative dialogue on the many dimensions of human well-being.
         </p>
+
+        {/* Empowerment Message */}
+        <div className="bg-slate-900/60 backdrop-blur-sm rounded-lg p-8 mb-12 max-w-4xl mx-auto border border-amber-500/20 animate-fade-in animate-delay-700">
+          <h3 className="text-2xl font-semibold text-amber-400 mb-4">Empowering Women in Wealth Creation</h3>
+          <p className="text-lg text-slate-300 leading-relaxed">
+            We recognize that women have traditionally been underrepresented in wealth-building and finance management spaces. 
+            Men have often played a pivotal role as mentors, empowering women to thrive and find their voice. As part of this 
+            initiative, every male member is encouraged to bring a woman to the forum. Our goal is to create a space where 
+            women can develop their skills, and where feminine empowerment drives long-term personal, financial, and societal transformation.
+          </p>
+        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-800">
