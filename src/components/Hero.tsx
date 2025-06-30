@@ -16,7 +16,11 @@ const Hero = () => {
           loop 
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => console.error('Video failed to load:', e)}
+          onLoadStart={() => console.log('Video started loading')}
+          onCanPlay={() => console.log('Video can play')}
         >
+          <source src="/lovable%20bvackground.mp4" type="video/mp4" />
           <source src="/lovable bvackground.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for text readability */}
