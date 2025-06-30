@@ -17,7 +17,6 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover"
           onError={(e) => {
             console.error('Video failed to load:', e);
-            console.log('Video element:', e.target);
             // Hide video and show fallback background
             const videoElement = e.target as HTMLVideoElement;
             videoElement.style.display = 'none';
@@ -26,10 +25,8 @@ const Hero = () => {
           onCanPlay={() => console.log('Video can play')}
           onLoadedData={() => console.log('Video data loaded')}
           onLoadedMetadata={() => console.log('Video metadata loaded')}
-          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='100%25' height='100%25' fill='%23000'/%3E%3C/svg%3E"
         >
-          <source src="/lovable%20bvackground.mp4" type="video/mp4" />
-          <source src="/lovable bvackground.mp4" type="video/mp4" />
+          <source src="/lovable.mp4" type="video/mp4" />
         </video>
         {/* Fallback background with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
