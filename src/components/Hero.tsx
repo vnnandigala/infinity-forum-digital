@@ -21,10 +21,8 @@ const Hero = () => {
           <source src="/lovable.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* Fallback background gradient */}
+        {/* Fallback background gradient - only if video fails */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
