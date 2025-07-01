@@ -9,30 +9,22 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <video 
           autoPlay 
           muted 
           loop 
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={(e) => {
-            console.error('Video failed to load:', e);
-            // Hide video and show fallback background
-            const videoElement = e.target as HTMLVideoElement;
-            videoElement.style.display = 'none';
-          }}
-          onLoadStart={() => console.log('Video started loading')}
-          onCanPlay={() => console.log('Video can play')}
-          onLoadedData={() => console.log('Video data loaded')}
-          onLoadedMetadata={() => console.log('Video metadata loaded')}
+          className="w-full h-full object-cover"
+          preload="auto"
         >
           <source src="/lovable.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
-        {/* Fallback background with gradient */}
+        {/* Fallback background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
@@ -55,8 +47,7 @@ const Hero = () => {
 
         {/* Description */}
         <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in animate-delay-600">
-          A private community of influential wealth creators, visionary leaders, and deep thinkers 
-          engaged in transformative dialogue on the many dimensions of human well-being.
+          A private community of influential wealth creators and investors, focused on giving back, investing in the future, and driving long-term transformation.
         </p>
 
         {/* CTA Buttons */}
@@ -77,7 +68,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-pulse"></div>
         </div>
