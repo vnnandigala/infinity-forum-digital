@@ -18,7 +18,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           preload="auto"
         >
-          <source src="/lovable.mp4" type="video/mp4" />
+          <source src="/lovablebg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Fallback background gradient - only if video fails */}
