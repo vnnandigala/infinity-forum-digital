@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Infinity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -57,17 +58,6 @@ const Hero = () => {
           A private community of influential wealth creators, visionary leaders, and deep thinkers 
           engaged in transformative dialogue on the many dimensions of human well-being.
         </p>
-
-        {/* Empowerment Message */}
-        <div className="bg-slate-900/60 backdrop-blur-sm rounded-lg p-8 mb-12 max-w-4xl mx-auto border border-amber-500/20 animate-fade-in animate-delay-700">
-          <h3 className="text-2xl font-semibold text-amber-400 mb-4">Empowering Women in Wealth Creation</h3>
-          <p className="text-lg text-slate-300 leading-relaxed">
-            We recognize that women have traditionally been underrepresented in wealth-building and finance management spaces. 
-            Men have often played a pivotal role as mentors, empowering women to thrive and find their voice. As part of this 
-            initiative, every male member is encouraged to bring a woman to the forum. Our goal is to create a space where 
-            women can develop their skills, and where feminine empowerment drives long-term personal, financial, and societal transformation.
-          </p>
-        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-800">

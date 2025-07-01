@@ -16,8 +16,8 @@ const Vision = () => {
               <span className="mr-2">🌠</span> Vision
             </h3>
             <p className="text-slate-700 leading-relaxed">
-              The Infinity Forum is a private community of influential wealth creators, visionary leaders, 
-              and deep thinkers engaged in transformative dialogue on the many dimensions of human well-being.
+              A private community of influential wealth creators and investors engaged in transformative dialogue on human well-being, 
+              with a shared focus on giving back and investing in the future, and a dedicated effort to include women in the community.
             </p>
           </div>
 
