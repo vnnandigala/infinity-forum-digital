@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -29,44 +30,120 @@ const Contact = () => {
   });
 
   const [activeTab, setActiveTab] = useState('contact');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', contactForm);
+    setIsSubmitting(true);
     
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Thank you for reaching out. We'll get back to you soon.",
-    });
+    try {
+      console.log('Submitting contact form:', contactForm);
+      
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: contactForm.name,
+          email: contactForm.email,
+          message: contactForm.message,
+          form_type: 'contact'
+        });
 
-    setContactForm({
-      name: '',
-      email: '',
-      message: ''
-    });
+      if (error) {
+        console.error('Error submitting contact form:', error);
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your message. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      console.log('Contact form submitted successfully');
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for reaching out. We'll get back to you soon.",
+      });
+
+      setContactForm({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleApplicationSubmit = (e: React.FormEvent) => {
+  const handleApplicationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Application submitted:', applicationForm);
+    setIsSubmitting(true);
     
-    toast({
-      title: "Application Submitted Successfully!",
-      description: "Thank you for your application. We'll review it and contact you soon.",
-    });
+    try {
+      console.log('Submitting application form:', applicationForm);
+      
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: applicationForm.fullName,
+          email: applicationForm.email,
+          phone: applicationForm.phone,
+          company: applicationForm.company,
+          position: applicationForm.position,
+          net_worth: applicationForm.netWorth,
+          experience: applicationForm.experience,
+          interests: applicationForm.interests,
+          motivation: applicationForm.motivation,
+          message: `Application for membership - Motivation: ${applicationForm.motivation}`,
+          form_type: 'application'
+        });
 
-    setApplicationForm({
-      fullName: '',
-      email: '',
-      phone: '',
-      company: '',
-      position: '',
-      netWorth: '',
-      experience: '',
-      interests: '',
-      motivation: '',
-      agreeToTerms: false
-    });
+      if (error) {
+        console.error('Error submitting application:', error);
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your application. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      console.log('Application submitted successfully');
+      
+      toast({
+        title: "Application Submitted Successfully!",
+        description: "Thank you for your application. We'll review it and contact you soon.",
+      });
+
+      setApplicationForm({
+        fullName: '',
+        email: '',
+        phone: '',
+        company: '',
+        position: '',
+        netWorth: '',
+        experience: '',
+        interests: '',
+        motivation: '',
+        agreeToTerms: false
+      });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -221,9 +298,13 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold">
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>
@@ -387,11 +468,11 @@ const Contact = () => {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold py-4"
-                  disabled={!applicationForm.agreeToTerms}
+                  disabled={!applicationForm.agreeToTerms || isSubmitting}
+                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold py-4 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Users className="w-4 h-4 mr-2" />
-                  Submit Application
+                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </Button>
               </form>
             </div>

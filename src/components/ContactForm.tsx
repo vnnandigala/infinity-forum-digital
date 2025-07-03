@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react';
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const ContactForm = () => {
   const navigate = useNavigate();
@@ -12,24 +14,60 @@ const ContactForm = () => {
     company: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
     
-    // Show success message
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Thank you for your interest. We'll get back to you soon.",
-    });
+    try {
+      console.log('Submitting form data:', formData);
+      
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || null,
+          message: formData.message,
+          form_type: 'contact'
+        });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
+      if (error) {
+        console.error('Error submitting form:', error);
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your message. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      console.log('Form submitted successfully');
+      
+      // Show success message
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your interest. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -158,10 +196,11 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-400 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-400 hover:to-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <Send className="w-5 h-5" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
