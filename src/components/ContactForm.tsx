@@ -1,10 +1,11 @@
-
 import React, { useState } from 'react';
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactForm = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +16,20 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission here
+    
+    // Show success message
+    toast({
+      title: "Message Sent Successfully!",
+      description: "Thank you for your interest. We'll get back to you soon.",
+    });
+
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      message: ''
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Send, Mail, Phone, MapPin, Users, CheckCircle, Infinity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,8 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
+  const { toast } = useToast();
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -32,13 +33,40 @@ const Contact = () => {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Contact form submitted:', contactForm);
-    // Handle contact form submission
+    
+    toast({
+      title: "Message Sent Successfully!",
+      description: "Thank you for reaching out. We'll get back to you soon.",
+    });
+
+    setContactForm({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
 
   const handleApplicationSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Application submitted:', applicationForm);
-    // Handle application submission
+    
+    toast({
+      title: "Application Submitted Successfully!",
+      description: "Thank you for your application. We'll review it and contact you soon.",
+    });
+
+    setApplicationForm({
+      fullName: '',
+      email: '',
+      phone: '',
+      company: '',
+      position: '',
+      netWorth: '',
+      experience: '',
+      interests: '',
+      motivation: '',
+      agreeToTerms: false
+    });
   };
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
