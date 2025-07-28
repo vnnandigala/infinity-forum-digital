@@ -44,8 +44,8 @@ const Hero = () => {
         </p>
 
         {/* Description */}
-        <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in animate-delay-600">
-          A private community of influential wealth creators and investors, focused on giving back, investing in the future, and driving long-term transformation.
+        <p className="text-xl text-slate-400 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in animate-delay-600">
+          Infinity Forum connects successful investors, corporate leaders, and entrepreneurs in a private peer-to-peer community, empowering members with knowledge, opportunities, and mentorship to drive wealth creation, global impact, and give back.
         </p>
 
         {/* CTA Buttons */}
