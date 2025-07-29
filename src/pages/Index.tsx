@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Hero from '../components/Hero';
+import VisionMissionPurpose from '../components/VisionMissionPurpose';
 import Vision from '../components/Vision';
 import WisdomFramework from '../components/WisdomFramework';
 import FocusAreas from '../components/FocusAreas';
@@ -12,6 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      <VisionMissionPurpose />
       <WisdomFramework />
       <Vision />
       <FocusAreas />
