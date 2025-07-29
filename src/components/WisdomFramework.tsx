@@ -52,23 +52,46 @@ const WisdomFramework = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-5xl font-bold text-slate-900 mb-8">
             Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
-            At Infinity Forum, we focus on holistic human well-being, guided by the six pillars of living with W.I.S.D.O.M.:
-          </p>
-          <div className="text-lg text-slate-600 max-w-4xl mx-auto space-y-2 mb-8">
-            <p><strong>W:</strong> Wealth and Estate</p>
-            <p><strong>I:</strong> Investments</p>
-            <p><strong>S:</strong> Spirituality, Health, and Well-being</p>
-            <p><strong>D:</strong> Disruptions and Innovations</p>
-            <p><strong>O:</strong> Ownership and Legacy</p>
-            <p><strong>M:</strong> Mentorship and Giving Back</p>
+          
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed">
+              At Infinity Forum, we focus on holistic human well-being, guided by the six pillars of living with <span className="font-semibold text-slate-800">W.I.S.D.O.M.</span>:
+            </p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
+                <div className="text-2xl font-bold text-emerald-600 mb-2">W</div>
+                <div className="text-sm font-medium text-slate-800">Wealth and Estate</div>
+              </div>
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
+                <div className="text-2xl font-bold text-blue-600 mb-2">I</div>
+                <div className="text-sm font-medium text-slate-800">Investments</div>
+              </div>
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
+                <div className="text-2xl font-bold text-pink-600 mb-2">S</div>
+                <div className="text-sm font-medium text-slate-800">Spirituality, Health, and Well-being</div>
+              </div>
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
+                <div className="text-2xl font-bold text-orange-600 mb-2">D</div>
+                <div className="text-sm font-medium text-slate-800">Disruptions and Innovations</div>
+              </div>
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
+                <div className="text-2xl font-bold text-purple-600 mb-2">O</div>
+                <div className="text-sm font-medium text-slate-800">Ownership and Legacy</div>
+              </div>
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
+                <div className="text-2xl font-bold text-cyan-600 mb-2">M</div>
+                <div className="text-sm font-medium text-slate-800">Mentorship and Giving Back</div>
+              </div>
+            </div>
+            
+            <p className="text-lg text-slate-600 leading-relaxed">
+              These pillars form the foundation of our approach to personal and professional growth. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement. This dynamic platform fosters insightful exchanges, empowering individuals to thrive in today's fast-paced world and build lasting success.
+            </p>
           </div>
-          <p className="text-lg text-slate-600 max-w-4xl mx-auto">
-            These pillars form the foundation of our approach to personal and professional growth. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement. This dynamic platform fosters insightful exchanges, empowering individuals to thrive in today's fast-paced world and build lasting success.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
