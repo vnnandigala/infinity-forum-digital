@@ -56,45 +56,14 @@ const WisdomFramework = () => {
             Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
           </h2>
           
-          <div className="max-w-5xl mx-auto">
-            <p className="text-xl text-slate-600 mb-10 leading-relaxed">
+          <div className="max-w-5xl mx-auto mb-12">
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               At Infinity Forum, we focus on holistic human well-being, guided by the six pillars of living with <span className="font-semibold text-slate-800">W.I.S.D.O.M.</span>:
-            </p>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
-                <div className="text-2xl font-bold text-emerald-600 mb-2">W</div>
-                <div className="text-sm font-medium text-slate-800">Wealth and Estate</div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
-                <div className="text-2xl font-bold text-blue-600 mb-2">I</div>
-                <div className="text-sm font-medium text-slate-800">Investments</div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
-                <div className="text-2xl font-bold text-pink-600 mb-2">S</div>
-                <div className="text-sm font-medium text-slate-800">Spirituality, Health, and Well-being</div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
-                <div className="text-2xl font-bold text-orange-600 mb-2">D</div>
-                <div className="text-sm font-medium text-slate-800">Disruptions and Innovations</div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
-                <div className="text-2xl font-bold text-purple-600 mb-2">O</div>
-                <div className="text-sm font-medium text-slate-800">Ownership and Legacy</div>
-              </div>
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 border border-slate-200">
-                <div className="text-2xl font-bold text-cyan-600 mb-2">M</div>
-                <div className="text-sm font-medium text-slate-800">Mentorship and Giving Back</div>
-              </div>
-            </div>
-            
-            <p className="text-lg text-slate-600 leading-relaxed">
-              These pillars form the foundation of our approach to personal and professional growth. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement. This dynamic platform fosters insightful exchanges, empowering individuals to thrive in today's fast-paced world and build lasting success.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {wisdomAreas.map((area, index) => {
             const Icon = area.icon;
             return (
@@ -117,6 +86,12 @@ const WisdomFramework = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="text-center max-w-5xl mx-auto">
+          <p className="text-lg text-slate-600 leading-relaxed">
+            These pillars form the foundation of our approach to personal and professional growth. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement. This dynamic platform fosters insightful exchanges, empowering individuals to thrive in today's fast-paced world and build lasting success.
+          </p>
         </div>
       </div>
     </section>
