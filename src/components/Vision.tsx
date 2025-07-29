@@ -1,23 +1,51 @@
 
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { Target, Eye, Compass } from 'lucide-react';
 
 const Vision = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        {/* Limitless Impact */}
-        <div className="group">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-            <Heart className="w-10 h-10 text-white" />
-          </div>
-          <h2 className="text-5xl font-bold text-slate-900 mb-8">Our Mission</h2>
-          <div className="text-left max-w-4xl mx-auto space-y-6">
-            <p className="text-xl text-slate-700 leading-relaxed">
-              At Infinity Forum, we create limitless impact by giving back. As angel investors, our members have access to a pipeline of vetted opportunities, carefully curated by the board, focused on underprivileged aspiring entrepreneurs who have the drive, passion, and commitment to succeed.
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-3 gap-12">
+          {/* Vision */}
+          <div className="text-center group">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Eye className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-center">
+              <span className="mr-2">🌠</span> Vision
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              A private community of influential wealth creators and investors engaged in transformative dialogue on human well-being, 
+              with a shared focus on giving back and investing in the future, and a dedicated effort to include women in the community.
             </p>
-            <p className="text-xl text-slate-700 leading-relaxed">
-              Forum funds or individual funds will be invested in these ventures, and members will also stay connected as mentors, guiding these entrepreneurs towards success. By empowering them, we help build businesses that uplift not only their families but also their communities, creating a ripple effect of positive change and long-term transformation.
+          </div>
+
+          {/* Mission */}
+          <div className="text-center group">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-amber-500 to-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Target className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-center">
+              <span className="mr-2">🎯</span> Mission
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              We cultivate a world-class intellectual ecosystem to exchange ideas, challenge the status quo, 
+              and explore expert insights—shaping the future with clarity, foresight, and collective wisdom.
+            </p>
+          </div>
+
+          {/* Purpose */}
+          <div className="text-center group">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-purple-500 to-violet-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Compass className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-center">
+              <span className="mr-2">🤝</span> Purpose
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              An exclusive intellectual community for accomplished individuals seeking a refined space 
+              for strategic dialogue, financial empowerment, personal evolution, and meaningful impact.
             </p>
           </div>
         </div>
