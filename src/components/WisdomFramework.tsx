@@ -53,11 +53,21 @@ const WisdomFramework = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-slate-900 mb-6">
-            Living <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">W.I.S.D.O.M.</span>
+            Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Our dialogues explore the full spectrum of human well-being and future readiness—anchored 
-            in the transformative topics of W.I.S.D.O.M.
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-8">
+            At Infinity Forum, we focus on holistic human well-being, guided by the six pillars of living with W.I.S.D.O.M.:
+          </p>
+          <div className="text-lg text-slate-600 max-w-4xl mx-auto space-y-2 mb-8">
+            <p><strong>W:</strong> Wealth and Estate</p>
+            <p><strong>I:</strong> Investments</p>
+            <p><strong>S:</strong> Spirituality, Health, and Well-being</p>
+            <p><strong>D:</strong> Disruptions and Innovations</p>
+            <p><strong>O:</strong> Ownership and Legacy</p>
+            <p><strong>M:</strong> Mentorship and Giving Back</p>
+          </div>
+          <p className="text-lg text-slate-600 max-w-4xl mx-auto">
+            These pillars form the foundation of our approach to personal and professional growth. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement. This dynamic platform fosters insightful exchanges, empowering individuals to thrive in today's fast-paced world and build lasting success.
           </p>
         </div>
 
