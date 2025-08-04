@@ -32,7 +32,7 @@ const Header = () => {
   const headerClasses = `
     fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
     ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'}
-    bg-black/80 backdrop-blur-md border-b border-slate-800
+    bg-black/20 backdrop-blur-xl border-b border-slate-800/30
   `;
 
   return (
