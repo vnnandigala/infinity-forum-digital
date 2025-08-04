@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Vision from '../components/Vision';
 import WisdomFramework from '../components/WisdomFramework';
-import LimitlessImpact from '../components/LimitlessImpact';
 
 import CoreOfferings from '../components/CoreOfferings';
 import Footer from '../components/Footer';
@@ -20,9 +19,6 @@ const Index = () => {
         </div>
         <div className="bg-white">
           <WisdomFramework />
-        </div>
-        <div className="bg-slate-50">
-          <LimitlessImpact />
         </div>
         <div className="bg-white">
           <CoreOfferings />
