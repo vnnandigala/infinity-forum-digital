@@ -354,6 +354,14 @@ const Apply = () => {
                 </RadioGroup>
               </div>
 
+              <div className="text-center mb-4">
+                <Link to="/terms">
+                  <Button variant="outline">
+                    Read Terms & Conditions
+                  </Button>
+                </Link>
+              </div>
+
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="agreeToTerms"
@@ -365,14 +373,6 @@ const Apply = () => {
                 <Label htmlFor="agreeToTerms" className="text-sm">
                   I agree to the terms and conditions and understand that membership is subject to review and approval *
                 </Label>
-              </div>
-
-              <div className="text-center">
-                <Link to="/terms">
-                  <Button variant="outline" className="mb-4">
-                    Read Full Terms & Conditions
-                  </Button>
-                </Link>
               </div>
 
               <Button 
