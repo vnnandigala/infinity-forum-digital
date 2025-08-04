@@ -38,14 +38,14 @@ const Header = () => {
   return (
     <div className={headerClasses}>
       <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-3">
+        <div className="flex items-center justify-between w-full">
+          <Link to="/" className="flex items-center space-x-3 flex-shrink-0">
             <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-lg flex items-center justify-center">
               <Infinity className="w-5 h-5 text-slate-900" strokeWidth={3} />
             </div>
             <span className="text-xl font-bold text-white">The Infinity Forum</span>
           </Link>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 flex-shrink-0">
             <Link to="/about">
               <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
                 About Us
