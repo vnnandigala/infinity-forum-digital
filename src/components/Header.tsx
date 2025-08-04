@@ -45,11 +45,23 @@ const Header = () => {
             </div>
             <span className="text-xl font-bold text-white">The Infinity Forum</span>
           </Link>
-          <Link to="/apply">
-            <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold">
-              Apply to Join
-            </Button>
-          </Link>
+          <div className="flex items-center space-x-4">
+            <Link to="/about">
+              <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
+                About Us
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
+                Contact Us
+              </Button>
+            </Link>
+            <Link to="/apply">
+              <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold">
+                Apply to Join
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
