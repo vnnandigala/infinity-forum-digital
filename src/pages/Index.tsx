@@ -12,9 +12,9 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
       <Header />
-      <div className="pt-20"> {/* Add padding top to account for fixed header */}
+      <div>
         <Hero />
       <Vision />
       <WisdomFramework />
