@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -26,6 +27,11 @@ const Contact = () => {
     experience: '',
     interests: '',
     motivation: '',
+    adjectives: '',
+    qualities: '',
+    gender: '',
+    bringFemale: '',
+    assetsConfirmation: '',
     agreeToTerms: false
   });
 
@@ -132,6 +138,11 @@ const Contact = () => {
         experience: '',
         interests: '',
         motivation: '',
+        adjectives: '',
+        qualities: '',
+        gender: '',
+        bringFemale: '',
+        assetsConfirmation: '',
         agreeToTerms: false
       });
     } catch (error) {
@@ -165,11 +176,19 @@ const Contact = () => {
       {/* Header */}
       <div className="bg-slate-900/50 backdrop-blur-sm border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-lg flex items-center justify-center">
-              <Infinity className="w-5 h-5 text-slate-900" strokeWidth={3} />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-lg flex items-center justify-center">
+                <Infinity className="w-5 h-5 text-slate-900" strokeWidth={3} />
+              </div>
+              <span className="text-xl font-bold text-white">The Infinity Forum</span>
             </div>
-            <span className="text-xl font-bold text-white">The Infinity Forum</span>
+            <Button
+              onClick={() => setActiveTab('application')}
+              className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold"
+            >
+              Apply to Join
+            </Button>
           </div>
         </div>
       </div>
@@ -228,7 +247,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Email</p>
-                    <p className="text-slate-300">unandigala@gmail.com</p>
+                    <p className="text-slate-300">ushan@infinityforum.club</p>
                   </div>
                 </div>
 
@@ -402,7 +421,8 @@ const Contact = () => {
                       required
                     >
                       <option value="">Select range</option>
-                      <option value="1M-5M">$1M - $5M</option>
+                      <option value="Below-2M">Below $2M</option>
+                      <option value="2M-5M">$2M - $5M</option>
                       <option value="5M-10M">$5M - $10M</option>
                       <option value="10M-25M">$10M - $25M</option>
                       <option value="25M-50M">$25M - $50M</option>
@@ -451,6 +471,90 @@ const Contact = () => {
                     placeholder="What motivates you to join our community? What value do you hope to gain and contribute?"
                     required
                   />
+                 </div>
+
+                <div>
+                  <Label htmlFor="adjectives">Please list three adjectives you would use to describe yourself *</Label>
+                  <Textarea
+                    id="adjectives"
+                    name="adjectives"
+                    value={applicationForm.adjectives}
+                    onChange={handleApplicationChange}
+                    rows={3}
+                    className="mt-2"
+                    placeholder="List three adjectives that best describe you..."
+                    required
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="qualities">What qualities do you possess that you believe may often go unnoticed by others? *</Label>
+                  <Textarea
+                    id="qualities"
+                    name="qualities"
+                    value={applicationForm.qualities}
+                    onChange={handleApplicationChange}
+                    rows={3}
+                    className="mt-2"
+                    placeholder="Describe qualities that may not be immediately apparent to others..."
+                    required
+                  />
+                </div>
+
+                <div>
+                  <Label>Gender *</Label>
+                  <RadioGroup
+                    value={applicationForm.gender}
+                    onValueChange={(value) => setApplicationForm({...applicationForm, gender: value})}
+                    className="mt-2"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="male" id="male" />
+                      <Label htmlFor="male">Male</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="female" id="female" />
+                      <Label htmlFor="female">Female</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                {applicationForm.gender === 'male' && (
+                  <div>
+                    <Label>If you identify as male, would you be willing to bring a female family member to participate, as we are actively promoting female awareness and participation? *</Label>
+                    <RadioGroup
+                      value={applicationForm.bringFemale}
+                      onValueChange={(value) => setApplicationForm({...applicationForm, bringFemale: value})}
+                      className="mt-2"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="yes" id="bring-yes" />
+                        <Label htmlFor="bring-yes">Yes</Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="no" id="bring-no" />
+                        <Label htmlFor="bring-no">No</Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+                )}
+
+                <div>
+                  <Label>Please note, the Infinity Forum is designed for individuals with assets over $2 million. Does this align with your profile? *</Label>
+                  <RadioGroup
+                    value={applicationForm.assetsConfirmation}
+                    onValueChange={(value) => setApplicationForm({...applicationForm, assetsConfirmation: value})}
+                    className="mt-2"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="yes" id="assets-yes" />
+                      <Label htmlFor="assets-yes">Yes</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="no" id="assets-no" />
+                      <Label htmlFor="assets-no">No</Label>
+                    </div>
+                  </RadioGroup>
                 </div>
 
                 <div className="flex items-center space-x-2">
