@@ -1,6 +1,9 @@
 import React from 'react';
+import { ArrowLeft } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Terms = () => {
   return (
@@ -92,6 +95,16 @@ const Terms = () => {
                   <h3 className="text-xl font-bold text-slate-900 mb-3">10. Governing Law</h3>
                   <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of Michigan, United States.</p>
                 </div>
+              </div>
+              
+              {/* Back to Application Button */}
+              <div className="mt-8 text-center">
+                <Link to="/apply">
+                  <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Back to Application
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

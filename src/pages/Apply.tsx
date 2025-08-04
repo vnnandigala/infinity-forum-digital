@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,6 +34,24 @@ const Apply = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Load form data from localStorage on component mount
+  useEffect(() => {
+    const savedForm = localStorage.getItem('infinityForumApplication');
+    if (savedForm) {
+      try {
+        const parsedForm = JSON.parse(savedForm);
+        setApplicationForm(parsedForm);
+      } catch (error) {
+        console.error('Error loading saved form data:', error);
+      }
+    }
+  }, []);
+
+  // Save form data to localStorage whenever form changes
+  useEffect(() => {
+    localStorage.setItem('infinityForumApplication', JSON.stringify(applicationForm));
+  }, [applicationForm]);
 
   const handleApplicationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,6 +110,9 @@ const Apply = () => {
         assetsConfirmation: '',
         agreeToTerms: false
       });
+
+      // Clear saved form data from localStorage
+      localStorage.removeItem('infinityForumApplication');
     } catch (error) {
       console.error('Unexpected error:', error);
       toast({
