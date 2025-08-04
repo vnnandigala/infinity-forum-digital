@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Infinity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const headerClasses = `
+    fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
+    ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'}
+    ${isHomePage 
+      ? 'bg-black/80 backdrop-blur-md border-b border-slate-800' 
+      : 'bg-slate-900/50 backdrop-blur-sm border-b border-slate-700'
+    }
+  `;
+
   return (
-    <div className="bg-slate-900/50 backdrop-blur-sm border-b border-slate-700">
+    <div className={headerClasses}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">

@@ -14,13 +14,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
+      <div className="pt-20"> {/* Add padding top to account for fixed header */}
+        <Hero />
       <Vision />
       <WisdomFramework />
       <LimitlessImpact />
       <FocusAreas />
       <CoreOfferings />
       <ContactForm />
+      </div>
       <Footer />
     </div>
   );
