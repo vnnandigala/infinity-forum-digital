@@ -56,6 +56,11 @@ const Header = () => {
                 Contact Us
               </Button>
             </Link>
+            <Link to="/media">
+              <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
+                Media
+              </Button>
+            </Link>
             <Link to="/apply">
               <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold">
                 Apply to Join
