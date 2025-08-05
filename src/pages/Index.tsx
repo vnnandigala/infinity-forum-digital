@@ -20,9 +20,7 @@ const Index = () => {
         <div className="bg-white">
           <WisdomFramework />
         </div>
-        <div className="bg-slate-50">
-          <CoreOfferings />
-        </div>
+        <CoreOfferings />
       </div>
       <Footer />
     </div>
