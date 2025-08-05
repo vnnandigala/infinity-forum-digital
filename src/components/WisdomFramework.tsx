@@ -160,10 +160,10 @@ const WisdomFramework = () => {
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{area.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {isSelected ? area.detailedDescription : area.description}
-                  </p>
+                   <h3 className="text-xl font-bold text-slate-900 mb-4">{area.title}</h3>
+                   <p className="text-slate-600 leading-relaxed">
+                     {area.description}
+                   </p>
                 </div>
               );
             })}
