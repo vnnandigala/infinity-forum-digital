@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain } from 'lucide-react';
 
 const WisdomFramework = () => {
+  const [selectedImpact, setSelectedImpact] = useState<string | null>(null);
+
   const wisdomAreas = [
     {
       letter: 'W',
@@ -55,18 +57,21 @@ const WisdomFramework = () => {
     {
       title: 'Yoga & Meditation Program Sponsorship',
       description: 'Sponsoring programs for mental health support',
+      detailedDescription: "Inspired by Yoda's teachings on balance and mindfulness, we sponsor yoga and meditation programs for mental health support, fostering well-being and resilience in underserved communities.",
       icon: Brain,
       gradient: 'from-pink-500 to-rose-600'
     },
     {
       title: 'Development through Syndicate Fund for impact investments',
       description: 'Fund high-impact ventures that align with our values',
+      detailedDescription: 'Through our syndicate fund, we strategically invest in high-impact ventures that create positive social and environmental change while generating sustainable returns for our members.',
       icon: Building,
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
       title: 'Angel Investment & Mentorship',
       description: 'Pre-seed for underprivileged entrepreneurs internationally',
+      detailedDescription: 'We provide pre-seed funding and ongoing mentorship to passionate entrepreneurs from underserved communities worldwide, helping them transform innovative ideas into successful businesses.',
       icon: HandHeart,
       gradient: 'from-emerald-500 to-green-600'
     }
@@ -143,21 +148,40 @@ const WisdomFramework = () => {
           <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {impactAreas.map((area, index) => {
               const Icon = area.icon;
+              const isSelected = selectedImpact === area.title;
               return (
                 <div 
                   key={area.title}
-                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
+                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100 cursor-pointer"
+                  onMouseEnter={() => setSelectedImpact(area.title)}
+                  onMouseLeave={() => setSelectedImpact(null)}
                 >
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   
                   <h3 className="text-xl font-bold text-slate-900 mb-4">{area.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{area.description}</p>
+                  <p className="text-slate-600 leading-relaxed">
+                    {isSelected ? area.detailedDescription : area.description}
+                  </p>
                 </div>
               );
             })}
           </div>
+
+          {/* Detailed Description Area */}
+          {selectedImpact && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/10 animate-fade-in">
+              <div className="text-center">
+                <h4 className="text-2xl font-bold text-amber-400 mb-4">
+                  {impactAreas.find(area => area.title === selectedImpact)?.title}
+                </h4>
+                <p className="text-lg text-slate-300 leading-relaxed max-w-4xl mx-auto">
+                  {impactAreas.find(area => area.title === selectedImpact)?.detailedDescription}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-lg text-slate-300 leading-relaxed">
