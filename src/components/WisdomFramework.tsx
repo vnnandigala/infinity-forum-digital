@@ -55,8 +55,8 @@ const WisdomFramework = () => {
 
   const impactAreas = [
     {
-      title: 'Yoga & Meditation Program Sponsorship',
-      description: 'Sponsoring programs for mental health support',
+      title: 'Yoga & Meditation Sponsorship',
+      description: 'Fund mental-health programs that build resilience in underserved communities.',
       detailedDescription: "Inspired by Yoda's teachings on balance and mindfulness, we sponsor yoga and meditation programs for mental health support, fostering well-being and resilience in underserved communities.",
       icon: Brain,
       gradient: 'from-pink-500 to-rose-600'
@@ -69,8 +69,8 @@ const WisdomFramework = () => {
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
-      title: 'Angel Investment & Mentorship',
-      description: 'Pre-seed for underprivileged entrepreneurs internationally',
+      title: 'Angel Investing & Mentorship',
+      description: 'Back underprivileged founders through a board-vetted pre-seed pipeline; invest via forum or individual capital and stay hands-on as mentors.',
       detailedDescription: "Like Yoda's role as a mentor, we support aspiring entrepreneurs from underprivileged backgrounds through angel investments and mentorship. Our members gain access to a pipeline of vetted opportunities, focused on individuals who have the drive, passion, and commitment to succeed. These ventures are funded either through forum funds or individual investments, and our members remain actively involved as mentors, guiding these entrepreneurs toward success and impact.",
       icon: HandHeart,
       gradient: 'from-emerald-500 to-green-600'
