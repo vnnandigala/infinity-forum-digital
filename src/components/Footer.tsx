@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <Link to="/contact" className="text-xl font-bold mb-6 hover:text-amber-400 transition-colors duration-300">Contact Us</Link>
+            <h3 className="text-xl font-bold mb-6">Contact Us</h3>
             <div className="space-y-4 mt-6">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-amber-400" />
@@ -51,6 +51,12 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-amber-400" />
                 <span className="text-slate-300">Private venues worldwide</span>
               </div>
+              <Link 
+                to="/contact" 
+                className="inline-block mt-6 px-4 py-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
+                Send us a message →
+              </Link>
             </div>
           </div>
         </div>
