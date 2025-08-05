@@ -22,7 +22,7 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
