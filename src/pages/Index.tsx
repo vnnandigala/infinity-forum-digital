@@ -21,6 +21,7 @@ const Index = () => {
           <WisdomFramework />
         </div>
       </div>
+      <div className="bg-white py-8"></div>
       <CoreOfferings />
       <Footer />
     </div>
