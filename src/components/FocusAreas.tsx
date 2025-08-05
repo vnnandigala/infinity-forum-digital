@@ -40,32 +40,28 @@ const FocusAreas = () => {
     <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-6">
-            <span className="mr-3">📚</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Focus Areas
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Five core pillars that guide our transformative conversations and collective growth.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Five core pillars that guide our transformative conversations and collective growth
           </p>
         </div>
 
-        <div className="space-y-8">
-          {areas.map((area, index) => {
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">{areas.map((area, index) => {
             const Icon = area.icon;
             return (
               <div 
                 key={index}
-                className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-700 group"
+                className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group"
               >
-                <div className="flex items-start space-x-6">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                <div className="text-center">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} group-hover:scale-110 transition-transform duration-300 mb-6`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-4">{area.title}</h3>
-                    <p className="text-slate-300 leading-relaxed text-lg">{area.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{area.title}</h3>
+                  <p className="text-slate-300 leading-relaxed">{area.description}</p>
                 </div>
               </div>
             );
