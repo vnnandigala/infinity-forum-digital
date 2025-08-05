@@ -66,7 +66,7 @@ const Media = () => {
       
       <div className="pt-20">
         {/* Hero Section */}
-        <div className="py-20">
+        <div className="py-12">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Media & <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">Insights</span>
@@ -78,7 +78,7 @@ const Media = () => {
         </div>
 
         {/* Subscribe Section */}
-        <section className="py-16 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border-y border-amber-500/20">
+        <section className="py-12 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border-y border-amber-500/20">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 mb-6">
               <Mail className="w-8 h-8 text-slate-900" />
