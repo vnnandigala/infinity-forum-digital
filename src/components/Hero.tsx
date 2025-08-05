@@ -2,27 +2,23 @@
 import React from 'react';
 import { Infinity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import abstractBg from '../assets/abstract-innovation-bg.jpg';
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-          preload="auto"
-        >
-          <source src="/lovablebg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${abstractBg})` }}
+        ></div>
+        {/* Animated overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80"></div>
+        {/* Subtle animation overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/5 to-transparent animate-pulse"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
