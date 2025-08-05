@@ -20,8 +20,8 @@ const Index = () => {
         <div className="bg-white">
           <WisdomFramework />
         </div>
-        <CoreOfferings />
       </div>
+      <CoreOfferings />
       <Footer />
     </div>
   );
