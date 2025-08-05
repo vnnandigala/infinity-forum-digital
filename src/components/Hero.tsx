@@ -27,6 +27,11 @@ const Hero = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-4xl">
+          {/* Logo */}
+          <div className="mb-8 animate-fade-in">
+            <Infinity className="w-24 h-24 text-amber-400" strokeWidth={1.5} />
+          </div>
+
           {/* Main Heading */}
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in">
             The Infinity <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">Forum</span>
