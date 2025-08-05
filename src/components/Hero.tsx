@@ -39,7 +39,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-xl text-slate-300 max-w-3xl mb-12 leading-relaxed animate-fade-in animate-delay-400">
-            A private community of influential wealth creators and investors, focused on giving back, investing in the future, and driving long-term transformation.
+            A peer-to-peer network of successful investors, entrepreneurs, and corporate leaders, driving intellectual growth, wealth creation, and social impact through collaboration and mentorship.
           </p>
 
           {/* CTA Buttons */}
