@@ -53,22 +53,22 @@ const WisdomFramework = () => {
 
   const impactAreas = [
     {
-      title: 'Angel Investment & Mentorship',
-      description: 'Pre-seed for underprivileged entrepreneurs internationally',
-      icon: HandHeart,
-      gradient: 'from-emerald-500 to-green-600'
+      title: 'Yoga & Meditation Program Sponsorship',
+      description: 'Sponsoring programs for mental health support',
+      icon: Brain,
+      gradient: 'from-pink-500 to-rose-600'
     },
     {
-      title: 'Syndicate Fund for Impact VC Investments',
+      title: 'Development through Syndicate Fund for impact investments',
       description: 'Fund high-impact ventures that align with our values',
       icon: Building,
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
-      title: 'Yoga & Meditation Program Sponsorship',
-      description: 'Sponsoring programs for mental health support',
-      icon: Brain,
-      gradient: 'from-pink-500 to-rose-600'
+      title: 'Angel Investment & Mentorship',
+      description: 'Pre-seed for underprivileged entrepreneurs internationally',
+      icon: HandHeart,
+      gradient: 'from-emerald-500 to-green-600'
     }
   ];
 
@@ -127,9 +127,12 @@ const WisdomFramework = () => {
         {/* Limitless Impact Section */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6">
+            <h2 className="text-5xl font-bold text-white mb-4">
               Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Impact</span>
             </h2>
+            <h3 className="text-2xl font-semibold text-amber-400 mb-8">
+              Living Y.O.D.A.
+            </h3>
             <div className="max-w-5xl mx-auto">
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
                 We create limitless impact by giving back and empowering the next generation of entrepreneurs.
