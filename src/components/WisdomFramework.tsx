@@ -185,7 +185,7 @@ const WisdomFramework = () => {
 
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-lg text-slate-300 leading-relaxed">
-              At Infinity Forum, we create limitless impact by giving back. As angel investors, our members have access to a pipeline of vetted opportunities, carefully curated by the board, focused on underprivileged aspiring entrepreneurs who have the drive, passion, and commitment to succeed. Forum funds or individual funds will be invested in these ventures, and members will also stay connected as mentors, guiding these entrepreneurs towards success.
+              We create limitless impact by empowering underprivileged entrepreneurs, elevating mental health through yoga and meditation, and investing strategically for transformational change.
             </p>
           </div>
         </div>
