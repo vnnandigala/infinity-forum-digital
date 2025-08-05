@@ -54,14 +54,6 @@ const WisdomFramework = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Two Core Aspects Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            The Two Core Aspects of Infinity Forum
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-600 mx-auto"></div>
-        </div>
-
         {/* Limitless Learning Section */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 mb-12 border border-white/20">
           <div className="text-center mb-16">
