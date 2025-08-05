@@ -153,7 +153,7 @@ const Apply = () => {
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Apply for Membership</h2>
               <p className="text-slate-600">
-                Join an exclusive community of visionary leaders, wealth creators, and deep thinkers.
+                Actually, Infinity Forum is designed for individuals with assets over $3 million. Join an exclusive community of visionary leaders, wealth creators, and deep thinkers.
               </p>
             </div>
 
@@ -358,7 +358,7 @@ const Apply = () => {
               )}
 
               <div>
-                <Label>Please note, the Infinity Forum is designed for individuals with assets over $2 million. Does this align with your profile? *</Label>
+                <Label>Please note, the Infinity Forum is designed for individuals with assets over $3 million. Does this align with your profile? *</Label>
                 <RadioGroup
                   value={applicationForm.assetsConfirmation}
                   onValueChange={(value) => setApplicationForm({...applicationForm, assetsConfirmation: value})}
