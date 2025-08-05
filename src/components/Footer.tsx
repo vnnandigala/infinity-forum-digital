@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Infinity, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -36,8 +37,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Contact Us</h3>
-            <div className="space-y-4">
+            <Link to="/contact" className="text-xl font-bold mb-6 hover:text-amber-400 transition-colors duration-300">Contact Us</Link>
+            <div className="space-y-4 mt-6">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-amber-400" />
                 <span className="text-slate-300">ushan@infinityforum.club</span>
