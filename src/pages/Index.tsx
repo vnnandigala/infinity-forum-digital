@@ -23,6 +23,7 @@ const Index = () => {
       </div>
       <div className="bg-white py-8"></div>
       <CoreOfferings />
+      <div className="bg-white py-8"></div>
       <Footer />
     </div>
   );
