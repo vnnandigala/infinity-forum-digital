@@ -4,12 +4,14 @@ import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building,
 
 const WisdomFramework = () => {
   const [selectedImpact, setSelectedImpact] = useState<string | null>(null);
+  const [hoveredWisdom, setHoveredWisdom] = useState<string | null>(null);
 
   const wisdomAreas = [
     {
       letter: 'W',
       title: 'Wealth & Estate',
       description: 'Wealth planning, asset protection, and intelligent portfolio design',
+      hoverText: 'Master wealth management and estate planning to grow and preserve assets, building legacies for future generations.',
       icon: DollarSign,
       gradient: 'from-emerald-500 to-green-600'
     },
@@ -17,6 +19,7 @@ const WisdomFramework = () => {
       letter: 'I',
       title: 'Investments',
       description: 'Private equity, venture capital, and global market opportunities',
+      hoverText: 'Unlock high-impact investment opportunities to build diversified portfolios and maximize returns.',
       icon: TrendingUp,
       gradient: 'from-blue-500 to-indigo-600'
     },
@@ -24,6 +27,7 @@ const WisdomFramework = () => {
       letter: 'S',
       title: 'Spirituality, Health & Wellness',
       description: 'Inner alignment, mental well-being, and conscious lifestyle design',
+      hoverText: 'Achieve holistic growth by integrating spirituality, health, and mindfulness into daily life.',
       icon: Heart,
       gradient: 'from-pink-500 to-rose-600'
     }
@@ -34,6 +38,7 @@ const WisdomFramework = () => {
       letter: 'D',
       title: 'Disruptions & Innovations',
       description: 'AI, exponential technologies, and transformative global shifts',
+      hoverText: 'Lead in a changing world by leveraging emerging technologies and market disruptions to create new opportunities.',
       icon: Zap,
       gradient: 'from-orange-500 to-red-600'
     },
@@ -41,6 +46,7 @@ const WisdomFramework = () => {
       letter: 'O',
       title: 'Ownership & Legacy',
       description: 'Estate planning, family offices, and multi-generational impact',
+      hoverText: 'Build sustainable businesses and leave a lasting legacy through smart ownership and strategic succession.',
       icon: Shield,
       gradient: 'from-purple-500 to-violet-600'
     },
@@ -48,6 +54,7 @@ const WisdomFramework = () => {
       letter: 'M',
       title: 'Mentorship & Giving Back',
       description: 'Philanthropic initiatives, mentorship, and meaningful contributions',
+      hoverText: 'Empower others by sharing knowledge, mentoring future leaders, and making a meaningful impact through giving back.',
       icon: Users,
       gradient: 'from-cyan-500 to-teal-600'
     }
@@ -104,7 +111,9 @@ const WisdomFramework = () => {
               return (
                 <div 
                   key={area.letter}
-                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
+                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100 cursor-pointer"
+                  onMouseEnter={() => setHoveredWisdom(area.letter)}
+                  onMouseLeave={() => setHoveredWisdom(null)}
                 >
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-8 h-8 text-white" />
@@ -122,6 +131,20 @@ const WisdomFramework = () => {
               );
             })}
           </div>
+
+          {/* Hover Description Area */}
+          {hoveredWisdom && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/10 animate-fade-in">
+              <div className="text-center">
+                <h4 className="text-2xl font-bold text-amber-400 mb-4">
+                  {hoveredWisdom} – {[...wisdomAreas, ...domAreas].find(area => area.letter === hoveredWisdom)?.title}
+                </h4>
+                <p className="text-lg text-slate-300 leading-relaxed max-w-4xl mx-auto">
+                  {[...wisdomAreas, ...domAreas].find(area => area.letter === hoveredWisdom)?.hoverText}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-lg text-slate-300 leading-relaxed">
