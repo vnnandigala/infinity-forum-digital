@@ -94,9 +94,6 @@ const WisdomFramework = () => {
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
                 Our dialogues explore the full spectrum of human well-being and future readiness—anchored in the transformative topics of <span className="font-semibold text-white">W.I.S.D.O.M.</span>
               </p>
-              <p className="text-lg text-slate-300 leading-relaxed">
-                We foster limitless learning through LIVING Wisdom, empowering individuals with knowledge across Wealth, Investments, Spirituality, Disruptions, Ownership, and Mentorship, driving intellectual growth and personal development with actionable insights.
-              </p>
             </div>
           </div>
 
@@ -123,6 +120,12 @@ const WisdomFramework = () => {
                 </div>
               );
             })}
+          </div>
+
+          <div className="text-center max-w-5xl mx-auto">
+            <p className="text-lg text-slate-300 leading-relaxed">
+              We foster limitless learning through LIVING Wisdom, empowering individuals with knowledge across Wealth, Investments, Spirituality, Disruptions, Ownership, and Mentorship, driving intellectual growth and personal development with actionable insights.
+            </p>
           </div>
 
         </div>
