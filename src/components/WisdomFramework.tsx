@@ -148,7 +148,7 @@ const WisdomFramework = () => {
 
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-lg text-slate-300 leading-relaxed">
-              We foster limitless learning through LIVING Wisdom, empowering individuals with knowledge across Wealth, Investments, Spirituality, Disruptions, Ownership, and Mentorship, driving intellectual growth and personal development with actionable insights.
+              Limitless learning, powered by LIVING W.I.S.D.O.M.—Wealth, Investments, Spirituality, Disruptions, Ownership, Mentorship. We trade actionable insights peer-to-peer to think sharper, grow faster, and turn ideas into impact.
             </p>
           </div>
 
