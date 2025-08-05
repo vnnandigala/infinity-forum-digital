@@ -48,7 +48,7 @@ const Header = () => {
           <div className="flex items-center space-x-4 flex-shrink-0">
             <Link to="/about">
               <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
-                About Us
+                Experiences
               </Button>
             </Link>
             <Link to="/contact">
