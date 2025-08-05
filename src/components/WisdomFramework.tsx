@@ -140,7 +140,7 @@ const WisdomFramework = () => {
             </h3>
             <div className="max-w-5xl mx-auto">
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                Living YODA is not just about personal success; it's about using wisdom, mentorship, and opportunity to create a lasting impact by empowering the next generation of entrepreneurs and uplifting others.
+                Empower entrepreneurs. Elevate mental health. Invest for transformational change.
               </p>
             </div>
           </div>
