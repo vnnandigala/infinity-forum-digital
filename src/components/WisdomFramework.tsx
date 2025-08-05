@@ -52,54 +52,64 @@ const WisdomFramework = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Limitless Learning Section - WIS */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-slate-900 mb-8">
-            Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
+        {/* Two Core Aspects Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            The Two Core Aspects of Infinity Forum
           </h2>
-          
-          <div className="max-w-5xl mx-auto mb-12">
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              At Infinity Forum, we focus on holistic human well-being, guided by the first three pillars of living with <span className="font-semibold text-slate-800">W.I.S.</span>:
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-yellow-600 mx-auto"></div>
+        </div>
+
+        {/* Limitless Learning Section */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 mb-12 border border-white/20">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-8">
+              Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
+            </h2>
+            
+            <div className="max-w-5xl mx-auto mb-12">
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                At Infinity Forum, we focus on holistic human well-being, guided by the first three pillars of living with <span className="font-semibold text-white">W.I.S.</span>:
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[...wisdomAreas, ...domAreas].map((area, index) => {
+              const Icon = area.icon;
+              return (
+                <div 
+                  key={area.letter}
+                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
+                >
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <div className="flex items-center mb-4">
+                    <span className={`text-4xl font-bold bg-gradient-to-r ${area.gradient} bg-clip-text text-transparent mr-3`}>
+                      {area.letter}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900">{area.title}</h3>
+                  </div>
+                  
+                  <p className="text-slate-600 leading-relaxed">{area.description}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center max-w-5xl mx-auto">
+            <p className="text-lg text-slate-300 leading-relaxed">
+              These pillars form the foundation of our approach to personal and professional growth, covering both limitless learning and limitless impact. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {[...wisdomAreas, ...domAreas].map((area, index) => {
-            const Icon = area.icon;
-            return (
-              <div 
-                key={area.letter}
-                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
-              >
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <div className="flex items-center mb-4">
-                  <span className={`text-4xl font-bold bg-gradient-to-r ${area.gradient} bg-clip-text text-transparent mr-3`}>
-                    {area.letter}
-                  </span>
-                  <h3 className="text-xl font-bold text-slate-900">{area.title}</h3>
-                </div>
-                
-                <p className="text-slate-600 leading-relaxed">{area.description}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="text-center max-w-5xl mx-auto mb-20">
-          <p className="text-lg text-slate-600 leading-relaxed">
-            These pillars form the foundation of our approach to personal and professional growth, covering both limitless learning and limitless impact. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement.
-          </p>
-        </div>
-
         {/* Limitless Impact Section */}
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12">
+        <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
               Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Impact</span>
