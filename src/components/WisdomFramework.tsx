@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { DollarSign, TrendingUp, Heart, Zap, Shield, Users } from 'lucide-react';
+import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain } from 'lucide-react';
 
 const WisdomFramework = () => {
   const wisdomAreas = [
@@ -48,6 +48,27 @@ const WisdomFramework = () => {
       description: 'Philanthropic initiatives, mentorship, and meaningful contributions',
       icon: Users,
       gradient: 'from-cyan-500 to-teal-600'
+    }
+  ];
+
+  const impactAreas = [
+    {
+      title: 'Angel Investment & Mentorship',
+      description: 'Pre-seed for underprivileged entrepreneurs internationally',
+      icon: HandHeart,
+      gradient: 'from-emerald-500 to-green-600'
+    },
+    {
+      title: 'Syndicate Fund for Impact VC Investments',
+      description: 'Fund high-impact ventures that align with our values',
+      icon: Building,
+      gradient: 'from-blue-500 to-indigo-600'
+    },
+    {
+      title: 'Yoga & Meditation Program Sponsorship',
+      description: 'Sponsoring programs for mental health support',
+      icon: Brain,
+      gradient: 'from-pink-500 to-rose-600'
     }
   ];
 
@@ -116,9 +137,28 @@ const WisdomFramework = () => {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <p className="text-lg text-white leading-relaxed">
-              At Infinity Forum, we create limitless impact by giving back. As angel investors, our members have access to a pipeline of vetted opportunities, carefully curated by the board, focused on underprivileged aspiring entrepreneurs who have the drive, passion, and commitment to succeed. Forum funds or individual funds will be invested in these ventures, and members will also stay connected as mentors, guiding these entrepreneurs towards success. By empowering them, we help build businesses that uplift not only their families but also their communities, creating a ripple effect of positive change and long-term transformation.
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {impactAreas.map((area, index) => {
+              const Icon = area.icon;
+              return (
+                <div 
+                  key={area.title}
+                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
+                >
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{area.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{area.description}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center max-w-5xl mx-auto">
+            <p className="text-lg text-slate-300 leading-relaxed">
+              At Infinity Forum, we create limitless impact by giving back. As angel investors, our members have access to a pipeline of vetted opportunities, carefully curated by the board, focused on underprivileged aspiring entrepreneurs who have the drive, passion, and commitment to succeed. Forum funds or individual funds will be invested in these ventures, and members will also stay connected as mentors, guiding these entrepreneurs towards success.
             </p>
           </div>
         </div>
