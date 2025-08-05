@@ -22,14 +22,19 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-4xl">
           {/* Logo */}
           <div className="mb-8 animate-fade-in">
-            <Infinity className="w-24 h-24 text-amber-400" strokeWidth={1.5} />
+            <div className="relative">
+              <Infinity className="w-28 h-28 text-amber-400 drop-shadow-lg" strokeWidth={2} />
+              <div className="absolute inset-0 animate-pulse">
+                <Infinity className="w-28 h-28 text-amber-300/30" strokeWidth={3} />
+              </div>
+            </div>
           </div>
 
           {/* Main Heading */}
