@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain } from 'lucide-react';
+import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain, GraduationCap, Target } from 'lucide-react';
 
 const WisdomFramework = () => {
   const [selectedImpact, setSelectedImpact] = useState<string | null>(null);
@@ -83,7 +83,8 @@ const WisdomFramework = () => {
         {/* Limitless Learning Section */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 mb-12 border border-white/20">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4 flex items-center justify-center gap-4">
+              <GraduationCap className="w-12 h-12 text-amber-500" />
               Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
             </h2>
             <h3 className="text-2xl font-semibold text-amber-400 mb-8">
@@ -133,7 +134,8 @@ const WisdomFramework = () => {
         {/* Limitless Impact Section */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-4">
+            <h2 className="text-5xl font-bold text-white mb-4 flex items-center justify-center gap-4">
+              <Target className="w-12 h-12 text-amber-500" />
               Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Impact</span>
             </h2>
             <h3 className="text-2xl font-semibold text-amber-400 mb-4">
@@ -192,6 +194,7 @@ const WisdomFramework = () => {
         </div>
 
         {/* Summary Section - Highlighted Box */}
+        <div className="mt-16"></div>
         <div className="bg-gradient-to-r from-amber-500/20 to-yellow-600/20 backdrop-blur-sm rounded-2xl p-6 border-2 border-amber-400/30 shadow-lg">
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-xl font-bold text-white leading-relaxed">
