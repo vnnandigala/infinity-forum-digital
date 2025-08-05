@@ -122,11 +122,6 @@ const WisdomFramework = () => {
             })}
           </div>
 
-          <div className="text-center max-w-5xl mx-auto">
-            <p className="text-lg text-slate-300 leading-relaxed">
-              These pillars form the foundation of our approach to personal and professional growth, covering both limitless learning and limitless impact. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement.
-            </p>
-          </div>
         </div>
 
         {/* Limitless Impact Section */}
