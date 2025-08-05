@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { BookOpen, Headphones, ExternalLink, Mail } from 'lucide-react';
 
 const Media = () => {
+  const [subscribeOpen, setSubscribeOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '' });
+
+  const handleSubscribeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle subscription logic here
+    console.log('Subscription submitted:', formData);
+    setSubscribeOpen(false);
+    setFormData({ name: '', email: '' });
+  };
   const blogs = [
     {
       title: 'The Future of Leadership in a Digital Age',
@@ -76,9 +89,64 @@ const Media = () => {
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
               Subscribe to receive our latest insights, exclusive content, and updates on new episodes and articles.
             </p>
-            <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold px-8 py-3 text-lg">
-              Subscribe to Updates
-            </Button>
+            <Dialog open={subscribeOpen} onOpenChange={setSubscribeOpen}>
+              <DialogTrigger asChild>
+                <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold px-8 py-3 text-lg">
+                  Subscribe to Updates
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-amber-500" />
+                    Subscribe to Updates
+                  </DialogTitle>
+                  <DialogDescription>
+                    Stay connected with The Infinity Forum. Get the latest insights and updates delivered to your inbox.
+                  </DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleSubscribeSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="Enter your full name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="flex gap-3 pt-4">
+                    <Button 
+                      type="button" 
+                      variant="outline" 
+                      onClick={() => setSubscribeOpen(false)}
+                      className="flex-1"
+                    >
+                      Cancel
+                    </Button>
+                    <Button 
+                      type="submit"
+                      className="flex-1 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold"
+                    >
+                      Subscribe
+                    </Button>
+                  </div>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
 
