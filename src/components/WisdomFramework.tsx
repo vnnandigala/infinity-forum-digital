@@ -62,8 +62,8 @@ const WisdomFramework = () => {
       gradient: 'from-pink-500 to-rose-600'
     },
     {
-      title: 'Development through Syndicate Fund for impact investments',
-      description: 'Fund high-impact ventures that align with our values',
+      title: 'Develop Impact VC Syndicate',
+      description: 'Pool capital into mission-aligned ventures to drive scalable social and economic change.',
       detailedDescription: "Just as Yoda uses his knowledge of the Force for greater good, our Syndicate Fund for Impact VC Investments helps channel resources into ventures that align with our core values. By supporting impactful startups and social enterprises, we drive long-term social and economic change, creating opportunities for growth and progress worldwide.",
       icon: Building,
       gradient: 'from-blue-500 to-indigo-600'
