@@ -71,7 +71,7 @@ const WisdomFramework = () => {
             
             <div className="max-w-5xl mx-auto mb-12">
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                At Infinity Forum, we focus on holistic human well-being, guided by the first three pillars of living with <span className="font-semibold text-white">W.I.S.</span>:
+                Our dialogues explore the full spectrum of human well-being and future readiness—anchored in the transformative topics of <span className="font-semibold text-white">W.I.S.D.O.M.</span>
               </p>
             </div>
           </div>
