@@ -64,14 +64,14 @@ const WisdomFramework = () => {
     {
       title: 'Development through Syndicate Fund for impact investments',
       description: 'Fund high-impact ventures that align with our values',
-      detailedDescription: 'Through our syndicate fund, we strategically invest in high-impact ventures that create positive social and environmental change while generating sustainable returns for our members.',
+      detailedDescription: "Just as Yoda uses his knowledge of the Force for greater good, our Syndicate Fund for Impact VC Investments helps channel resources into ventures that align with our core values. By supporting impactful startups and social enterprises, we drive long-term social and economic change, creating opportunities for growth and progress worldwide.",
       icon: Building,
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
       title: 'Angel Investment & Mentorship',
       description: 'Pre-seed for underprivileged entrepreneurs internationally',
-      detailedDescription: 'We provide pre-seed funding and ongoing mentorship to passionate entrepreneurs from underserved communities worldwide, helping them transform innovative ideas into successful businesses.',
+      detailedDescription: "Like Yoda's role as a mentor, we support aspiring entrepreneurs from underprivileged backgrounds through angel investments and mentorship. Our members gain access to a pipeline of vetted opportunities, focused on individuals who have the drive, passion, and commitment to succeed. These ventures are funded either through forum funds or individual investments, and our members remain actively involved as mentors, guiding these entrepreneurs toward success and impact.",
       icon: HandHeart,
       gradient: 'from-emerald-500 to-green-600'
     }
