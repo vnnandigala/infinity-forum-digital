@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BookOpen, Headphones, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { BookOpen, Headphones, ExternalLink, Mail } from 'lucide-react';
 
 const Media = () => {
   const blogs = [
@@ -62,6 +63,24 @@ const Media = () => {
             </p>
           </div>
         </div>
+
+        {/* Subscribe Section */}
+        <section className="py-16 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border-y border-amber-500/20">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 mb-6">
+              <Mail className="w-8 h-8 text-slate-900" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Stay Connected
+            </h3>
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+              Subscribe to receive our latest insights, exclusive content, and updates on new episodes and articles.
+            </p>
+            <Button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold px-8 py-3 text-lg">
+              Subscribe to Updates
+            </Button>
+          </div>
+        </section>
 
         {/* Blogs Section */}
         <section className="py-20 bg-slate-800/50">
