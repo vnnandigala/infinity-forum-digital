@@ -68,7 +68,7 @@ const WisdomFramework = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {wisdomAreas.map((area, index) => {
+          {[...wisdomAreas, ...domAreas].map((area, index) => {
             const Icon = area.icon;
             return (
               <div 
@@ -94,11 +94,11 @@ const WisdomFramework = () => {
 
         <div className="text-center max-w-5xl mx-auto mb-20">
           <p className="text-lg text-slate-600 leading-relaxed">
-            These pillars form the foundation of our approach to personal and professional growth. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement.
+            These pillars form the foundation of our approach to personal and professional growth, covering both limitless learning and limitless impact. Members gain access to curated content, pre-recorded podcasts, and live panel discussions with industry leaders, along with peer-to-peer engagement.
           </p>
         </div>
 
-        {/* Limitless Impact Section - DOM */}
+        {/* Limitless Impact Section */}
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
@@ -106,34 +106,9 @@ const WisdomFramework = () => {
             </h2>
             <div className="max-w-5xl mx-auto">
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                We create limitless impact through the remaining pillars of <span className="font-semibold text-white">D.O.M.</span>:
+                We create limitless impact by giving back and empowering the next generation of entrepreneurs.
               </p>
             </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {domAreas.map((area, index) => {
-              const Icon = area.icon;
-              return (
-                <div 
-                  key={area.letter}
-                  className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2"
-                >
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <div className="flex items-center mb-4">
-                    <span className={`text-4xl font-bold bg-gradient-to-r ${area.gradient} bg-clip-text text-transparent mr-3`}>
-                      {area.letter}
-                    </span>
-                    <h3 className="text-xl font-bold text-white">{area.title}</h3>
-                  </div>
-                  
-                  <p className="text-slate-300 leading-relaxed">{area.description}</p>
-                </div>
-              );
-            })}
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
