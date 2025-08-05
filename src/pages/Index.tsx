@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from '../components/Header';
+import EventBanner from '../components/EventBanner';
 import Hero from '../components/Hero';
 import Vision from '../components/Vision';
 import WisdomFramework from '../components/WisdomFramework';
@@ -11,6 +12,7 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <EventBanner />
       <Header />
       <div>
         <Hero />

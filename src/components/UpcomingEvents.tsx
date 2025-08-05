@@ -34,12 +34,12 @@ const UpcomingEvents = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">September 28th, 2024</span>
+                    <span className="font-semibold">September 27th, 2024</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">3:00 PM - 6:00 PM EST</span>
+                    <span className="font-semibold">4:00 PM - 7:00 PM EST</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
