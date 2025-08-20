@@ -123,7 +123,7 @@ const Rsvp = () => {
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <MapPin className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">Private Members Club, NYC</span>
+                    <span className="font-semibold">Michigan & Online via Zoom</span>
                   </div>
                 </div>
 
