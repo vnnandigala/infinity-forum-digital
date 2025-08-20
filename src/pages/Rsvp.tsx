@@ -100,14 +100,14 @@ const Rsvp = () => {
                   RSVP for Our Event
                 </h1>
                 <p className="text-xl text-slate-300">
-                  Reserve your spot at our exclusive masterclass
+                  Reserve your spot at our exclusive insightful event
                 </p>
               </div>
 
               {/* Event Info Card */}
               <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">
-                  Wealth & Estate Planning Masterclass
+                  Wealth & Estate Planning Insightful Event
                 </h2>
                 
                 <div className="space-y-4">
