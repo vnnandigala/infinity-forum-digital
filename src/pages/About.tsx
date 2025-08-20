@@ -11,13 +11,13 @@ const About = () => {
       
       <div className="pt-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="pt-8">
-          <FocusAreas />
+          <CoreOfferings />
         </div>
         
         <div className="bg-white py-8"></div>
         
         <div>
-          <CoreOfferings />
+          <FocusAreas />
         </div>
         
         <div className="bg-white py-8"></div>
