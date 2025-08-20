@@ -10,6 +10,7 @@ import Apply from "./pages/Apply";
 import About from "./pages/About";
 import Media from "./pages/Media";
 import Terms from "./pages/Terms";
+import Rsvp from "./pages/Rsvp";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/media" element={<Media />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/rsvp" element={<Rsvp />} />
           <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

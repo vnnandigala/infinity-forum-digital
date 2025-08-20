@@ -1,9 +1,11 @@
 import React from 'react';
 import { Calendar, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const EventBanner = () => {
   const [isVisible, setIsVisible] = React.useState(true);
+  const navigate = useNavigate();
 
   if (!isVisible) return null;
 
@@ -31,6 +33,7 @@ const EventBanner = () => {
           <Button 
             size="sm" 
             variant="outline"
+            onClick={() => navigate('/rsvp')}
             className="bg-white/20 border-slate-900/20 text-slate-900 hover:bg-white/30 text-xs px-3 py-1 h-auto"
           >
             RSVP

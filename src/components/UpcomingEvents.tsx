@@ -1,8 +1,10 @@
 import React from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const UpcomingEvents = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-7xl mx-auto px-6">
@@ -61,6 +63,7 @@ const UpcomingEvents = () => {
                 </div>
                 
                 <Button 
+                  onClick={() => navigate('/rsvp')}
                   className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   RSVP Now
