@@ -51,6 +51,11 @@ const Header = () => {
                 Experiences
               </Button>
             </Link>
+            <Link to="/event">
+              <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
+                Event
+              </Button>
+            </Link>
             <Link to="/media">
               <Button variant="ghost" className="text-white hover:text-amber-400 hover:bg-white/10">
                 Media
