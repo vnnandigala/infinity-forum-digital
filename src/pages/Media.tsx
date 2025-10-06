@@ -218,48 +218,6 @@ const Media = () => {
           </div>
         </section>
 
-        {/* Blogs Section */}
-        <section className="py-20 bg-slate-800/50">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <BookOpen className="inline-block w-12 h-12 mr-4 text-amber-400" />
-                Latest Blogs
-              </h2>
-              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                In-depth articles exploring the intersection of wisdom, innovation, and impact.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogs.map((blog, index) => (
-                <div 
-                  key={index}
-                  className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group cursor-pointer"
-                >
-                  <div className="mb-4">
-                    <span className="text-amber-400 text-sm font-medium">{blog.date}</span>
-                    <span className="text-slate-400 text-sm ml-2">• {blog.readTime}</span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300">
-                    {blog.title}
-                  </h3>
-                  
-                  <p className="text-slate-300 leading-relaxed mb-6">
-                    {blog.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center text-amber-400 font-semibold group-hover:text-yellow-300 transition-colors duration-300">
-                    Read More
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Podcasts Section */}
         <section className="py-20 bg-slate-900">
           <div className="max-w-7xl mx-auto px-6">
@@ -294,6 +252,48 @@ const Media = () => {
                   
                   <div className="flex items-center text-amber-400 font-semibold group-hover:text-yellow-300 transition-colors duration-300">
                     Listen Now
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blogs Section */}
+        <section className="py-20 bg-slate-800/50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <BookOpen className="inline-block w-12 h-12 mr-4 text-amber-400" />
+                Latest Blogs
+              </h2>
+              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                In-depth articles exploring the intersection of wisdom, innovation, and impact.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog, index) => (
+                <div 
+                  key={index}
+                  className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group cursor-pointer"
+                >
+                  <div className="mb-4">
+                    <span className="text-amber-400 text-sm font-medium">{blog.date}</span>
+                    <span className="text-slate-400 text-sm ml-2">• {blog.readTime}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300">
+                    {blog.title}
+                  </h3>
+                  
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    {blog.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center text-amber-400 font-semibold group-hover:text-yellow-300 transition-colors duration-300">
+                    Read More
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </div>
                 </div>
