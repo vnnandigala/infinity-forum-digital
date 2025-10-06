@@ -80,8 +80,8 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Video */}
-          <div className="animate-fade-in animate-delay-400">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500/30 hover:border-amber-500/50 transition-all duration-300">
+          <div className="animate-fade-in animate-delay-400 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md rounded-xl overflow-hidden shadow-2xl border-2 border-amber-500/30 hover:border-amber-500/50 transition-all duration-300">
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
