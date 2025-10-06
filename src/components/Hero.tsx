@@ -56,7 +56,7 @@ const Hero = () => {
           <div className="mb-8 animate-fade-in animate-delay-500">
             <div className="inline-flex items-center bg-amber-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full px-6 py-3 text-amber-300">
               <Calendar className="w-4 h-4 mr-2" />
-              <span className="text-sm font-semibold">Next Event: Wealth & Estate - Sep 27th, 4-7 PM</span>
+              <span className="text-sm font-semibold">Next Event: Investments - Dec 7th, 2-5 PM</span>
             </div>
           </div>
 
