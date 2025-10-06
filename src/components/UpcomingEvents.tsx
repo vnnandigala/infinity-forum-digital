@@ -24,24 +24,24 @@ const UpcomingEvents = () => {
               <div className="flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    Wealth and Estate Planning Masterclass
+                    Investments Masterclass
                   </h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Deep dive into advanced wealth management strategies, estate planning fundamentals, 
-                    and preservation techniques for high-net-worth individuals. Network with fellow members 
-                    and gain actionable insights from industry experts.
+                    Explore investment strategies and opportunities for growing wealth with purpose. 
+                    Following our W.I.S.D.O.M. framework, this session will provide actionable insights 
+                    into strategic investing for high-net-worth individuals.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">September 27th, 2024</span>
+                    <span className="font-semibold">December 7th, 2024</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">4:00 PM - 7:00 PM EST</span>
+                    <span className="font-semibold">2:00 PM - 5:00 PM EST</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">

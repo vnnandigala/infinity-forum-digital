@@ -19,13 +19,13 @@ const EventBanner = () => {
           </div>
           
           <div className="hidden sm:flex items-center space-x-4 text-sm">
-            <span className="font-medium">Wealth & Estate Masterclass</span>
+            <span className="font-medium">Investments Masterclass</span>
             <span>•</span>
-            <span>Sep 27th, 4-7 PM</span>
+            <span>Dec 7th, 2-5 PM</span>
           </div>
           
           <div className="sm:hidden text-sm font-medium">
-            Wealth & Estate - Sep 27th
+            Investments - Dec 7th
           </div>
         </div>
         
