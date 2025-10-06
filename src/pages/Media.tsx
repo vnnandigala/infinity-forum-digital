@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { BookOpen, Headphones, ExternalLink, Mail } from 'lucide-react';
+import { BookOpen, Headphones, ExternalLink, Mail, Video } from 'lucide-react';
 
 const Media = () => {
   const [subscribeOpen, setSubscribeOpen] = useState(false);
@@ -76,6 +76,74 @@ const Media = () => {
             </p>
           </div>
         </div>
+
+        {/* Introduction Videos Section */}
+        <section className="py-16 bg-slate-800/30">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <Video className="inline-block w-10 h-10 mr-3 text-amber-400" />
+                Introduction Videos
+              </h2>
+              <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+                Discover what The Infinity Forum is all about through our introduction series.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Video 1 */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-amber-500/20 hover:border-amber-500/40 group">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/z8DYVxKeKr4"
+                    title="Infinity Forum Introduction - Version 1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-white font-semibold mb-1 group-hover:text-amber-400 transition-colors">Version 1</h3>
+                  <p className="text-slate-400 text-sm">1:49 • Concise overview</p>
+                </div>
+              </div>
+
+              {/* Video 2 */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-amber-500/20 hover:border-amber-500/40 group">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/x-jDhdatAxE"
+                    title="Infinity Forum Introduction - Version 2"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-white font-semibold mb-1 group-hover:text-amber-400 transition-colors">Version 2</h3>
+                  <p className="text-slate-400 text-sm">2:16 • Extended version</p>
+                </div>
+              </div>
+
+              {/* Video 3 */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-amber-500/20 hover:border-amber-500/40 group">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/aQ8KtR7cgcU"
+                    title="Infinity Forum Introduction - Version 3"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-white font-semibold mb-1 group-hover:text-amber-400 transition-colors">Version 3</h3>
+                  <p className="text-slate-400 text-sm">2:00 • Detailed insights</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Subscribe Section */}
         <section className="py-12 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border-y border-amber-500/20">
