@@ -42,7 +42,7 @@ const Media = () => {
   const podcasts = [
     {
       title: 'Wealth Management with Daniel Beckerman - Yale and Columbia University',
-      description: 'A conversation with industry pioneers about transformative leadership.',
+      description: 'A insightful and thought provoking discussion around the changing world of wealth managment',
       duration: '45 min',
       episode: 'Episode 1',
       url: 'https://youtu.be/RCd6wXYkJEc'
