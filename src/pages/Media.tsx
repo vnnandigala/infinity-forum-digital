@@ -55,10 +55,10 @@ const Media = () => {
       url: 'https://youtu.be/K2sCDkUupyk'
     },
     {
-      title: 'Mindful Wealth: Beyond Financial Success',
-      description: 'Redefining prosperity through purpose and conscious living.',
+      title: 'Deepdive on Spectrum of Investments for clarity and opportunities',
+      description: 'Coming soon in December 2025',
       duration: '42 min',
-      episode: 'Episode 10'
+      episode: 'Episode 3'
     }
   ];
 
