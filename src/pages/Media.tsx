@@ -27,10 +27,11 @@ const Media = () => {
       url: '/brochures/yubhas-renewables-brochure.pdf'
     },
     {
-      title: 'Building Wealth Through Conscious Investment',
-      excerpt: 'A deep dive into sustainable and ethical investment strategies.',
-      date: 'December 10, 2024',
-      readTime: '8 min read'
+      title: 'RescuingLives.org – Empowering hope, restoring freedom.',
+      excerpt: 'Your donations help rescue victims of human trafficking and support their journey toward safety, dignity, and new beginnings.',
+      date: 'November 1, 2025',
+      readTime: '3 min read',
+      url: '/brochures/rescuing-lives-brochure.jpg'
     },
     {
       title: 'The Art of Meaningful Philanthropy',
