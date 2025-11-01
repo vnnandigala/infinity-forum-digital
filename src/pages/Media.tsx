@@ -20,10 +20,11 @@ const Media = () => {
   };
   const blogs = [
     {
-      title: 'The Future of Leadership in a Digital Age',
-      excerpt: 'Exploring how technology is reshaping leadership principles and practices.',
-      date: 'December 15, 2024',
-      readTime: '5 min read'
+      title: 'Yubhas Renewables pvt ltd',
+      excerpt: 'A solar powered self charging AI based locomotive',
+      date: 'November 1, 2025',
+      readTime: '5 min read',
+      url: '/brochures/yubhas-renewables-brochure.pdf'
     },
     {
       title: 'Building Wealth Through Conscious Investment',
@@ -280,9 +281,12 @@ const Media = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogs.map((blog, index) => (
-                <div 
+                <a
                   key={index}
-                  className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group cursor-pointer"
+                  href={blog.url || '#'}
+                  target={blog.url ? '_blank' : '_self'}
+                  rel={blog.url ? 'noopener noreferrer' : undefined}
+                  className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group cursor-pointer block"
                 >
                   <div className="mb-4">
                     <span className="text-amber-400 text-sm font-medium">{blog.date}</span>
@@ -298,10 +302,10 @@ const Media = () => {
                   </p>
                   
                   <div className="flex items-center text-amber-400 font-semibold group-hover:text-yellow-300 transition-colors duration-300">
-                    Read More
+                    {blog.url ? 'View Brochure' : 'Read More'}
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
