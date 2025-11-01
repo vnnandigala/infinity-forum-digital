@@ -11,6 +11,44 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { z } from 'zod';
+
+const applicationSchema = z.object({
+  fullName: z.string()
+    .trim()
+    .min(1, 'Full name is required')
+    .max(100, 'Name must be less than 100 characters'),
+  email: z.string()
+    .trim()
+    .email('Invalid email address')
+    .max(255, 'Email must be less than 255 characters'),
+  phone: z.string()
+    .trim()
+    .min(1, 'Phone number is required')
+    .max(20, 'Phone number must be less than 20 characters'),
+  company: z.string()
+    .trim()
+    .min(1, 'Company is required')
+    .max(200, 'Company name must be less than 200 characters'),
+  position: z.string()
+    .trim()
+    .min(1, 'Position is required')
+    .max(200, 'Position must be less than 200 characters'),
+  netWorth: z.string()
+    .min(1, 'Net worth range is required'),
+  experience: z.string()
+    .trim()
+    .min(1, 'Professional experience is required')
+    .max(2000, 'Experience must be less than 2000 characters'),
+  interests: z.string()
+    .trim()
+    .min(1, 'Areas of interest are required')
+    .max(1000, 'Interests must be less than 1000 characters'),
+  motivation: z.string()
+    .trim()
+    .min(1, 'Motivation is required')
+    .max(2000, 'Motivation must be less than 2000 characters')
+});
 
 const Apply = () => {
   const { toast } = useToast();
@@ -43,7 +81,7 @@ const Apply = () => {
         const parsedForm = JSON.parse(savedForm);
         setApplicationForm(parsedForm);
       } catch (error) {
-        console.error('Error loading saved form data:', error);
+        // Silently fail if saved form data is corrupted
       }
     }
   }, []);
@@ -58,26 +96,36 @@ const Apply = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Submitting application form:', applicationForm);
+      // Validate form data
+      const validatedData = applicationSchema.parse({
+        fullName: applicationForm.fullName,
+        email: applicationForm.email,
+        phone: applicationForm.phone,
+        company: applicationForm.company,
+        position: applicationForm.position,
+        netWorth: applicationForm.netWorth,
+        experience: applicationForm.experience,
+        interests: applicationForm.interests,
+        motivation: applicationForm.motivation
+      });
       
       const { error } = await supabase
         .from('contact_submissions')
         .insert({
-          name: applicationForm.fullName,
-          email: applicationForm.email,
-          phone: applicationForm.phone,
-          company: applicationForm.company,
-          position: applicationForm.position,
-          net_worth: applicationForm.netWorth,
-          experience: applicationForm.experience,
-          interests: applicationForm.interests,
-          motivation: applicationForm.motivation,
-          message: `Application for membership - Motivation: ${applicationForm.motivation}`,
+          name: validatedData.fullName,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          company: validatedData.company,
+          position: validatedData.position,
+          net_worth: validatedData.netWorth,
+          experience: validatedData.experience,
+          interests: validatedData.interests,
+          motivation: validatedData.motivation,
+          message: `Application for membership - Motivation: ${validatedData.motivation}`,
           form_type: 'application'
         });
 
       if (error) {
-        console.error('Error submitting application:', error);
         toast({
           title: "Error",
           description: "There was a problem submitting your application. Please try again.",
@@ -85,8 +133,6 @@ const Apply = () => {
         });
         return;
       }
-
-      console.log('Application submitted successfully');
       
       toast({
         title: "Application Submitted Successfully!",
@@ -114,12 +160,19 @@ const Apply = () => {
       // Clear saved form data from localStorage
       localStorage.removeItem('infinityForumApplication');
     } catch (error) {
-      console.error('Unexpected error:', error);
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "An unexpected error occurred. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -168,6 +221,7 @@ const Apply = () => {
                     value={applicationForm.fullName}
                     onChange={handleApplicationChange}
                     className="mt-2"
+                    maxLength={100}
                     required
                   />
                 </div>
@@ -181,6 +235,7 @@ const Apply = () => {
                     value={applicationForm.email}
                     onChange={handleApplicationChange}
                     className="mt-2"
+                    maxLength={255}
                     required
                   />
                 </div>
@@ -196,6 +251,7 @@ const Apply = () => {
                     value={applicationForm.phone}
                     onChange={handleApplicationChange}
                     className="mt-2"
+                    maxLength={20}
                     required
                   />
                 </div>
@@ -209,6 +265,7 @@ const Apply = () => {
                     value={applicationForm.company}
                     onChange={handleApplicationChange}
                     className="mt-2"
+                    maxLength={200}
                     required
                   />
                 </div>
@@ -224,6 +281,7 @@ const Apply = () => {
                     value={applicationForm.position}
                     onChange={handleApplicationChange}
                     className="mt-2"
+                    maxLength={200}
                     required
                   />
                 </div>
@@ -259,6 +317,7 @@ const Apply = () => {
                   rows={4}
                   className="mt-2"
                   placeholder="Describe your professional background, key achievements, and areas of expertise..."
+                  maxLength={2000}
                   required
                 />
               </div>
@@ -273,6 +332,7 @@ const Apply = () => {
                   rows={3}
                   className="mt-2"
                   placeholder="Which areas of our W.I.S.D.O.M. framework interest you most? (Wealth & Estate, Investments, Spirituality/Health/Wellness, Disruptions & Innovations, Ownership & Legacy, Mentorship & Giving Back)"
+                  maxLength={1000}
                   required
                 />
               </div>
@@ -287,6 +347,7 @@ const Apply = () => {
                   rows={4}
                   className="mt-2"
                   placeholder="What motivates you to join our community? What value do you hope to gain and contribute?"
+                  maxLength={2000}
                   required
                 />
               </div>
@@ -301,6 +362,7 @@ const Apply = () => {
                   rows={3}
                   className="mt-2"
                   placeholder="List three adjectives that best describe you..."
+                  maxLength={500}
                   required
                 />
               </div>
@@ -315,6 +377,7 @@ const Apply = () => {
                   rows={3}
                   className="mt-2"
                   placeholder="Describe qualities that may not be immediately apparent to others..."
+                  maxLength={1000}
                   required
                 />
               </div>

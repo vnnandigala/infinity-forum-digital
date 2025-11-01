@@ -4,6 +4,27 @@ import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { z } from 'zod';
+
+const contactFormSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, 'Name is required')
+    .max(100, 'Name must be less than 100 characters'),
+  email: z.string()
+    .trim()
+    .email('Invalid email address')
+    .max(255, 'Email must be less than 255 characters'),
+  company: z.string()
+    .trim()
+    .max(200, 'Company name must be less than 200 characters')
+    .optional()
+    .or(z.literal('')),
+  message: z.string()
+    .trim()
+    .min(1, 'Message is required')
+    .max(2000, 'Message must be less than 2000 characters')
+});
 
 const ContactForm = () => {
   const navigate = useNavigate();
@@ -21,20 +42,20 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Submitting form data:', formData);
+      // Validate form data
+      const validatedData = contactFormSchema.parse(formData);
       
       const { error } = await supabase
         .from('contact_submissions')
         .insert({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || null,
-          message: formData.message,
+          name: validatedData.name,
+          email: validatedData.email,
+          company: validatedData.company || null,
+          message: validatedData.message,
           form_type: 'contact'
         });
 
       if (error) {
-        console.error('Error submitting form:', error);
         toast({
           title: "Error",
           description: "There was a problem submitting your message. Please try again.",
@@ -42,8 +63,6 @@ const ContactForm = () => {
         });
         return;
       }
-
-      console.log('Form submitted successfully');
       
       // Show success message
       toast({
@@ -59,12 +78,19 @@ const ContactForm = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Unexpected error:', error);
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "An unexpected error occurred. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -145,6 +171,7 @@ const ContactForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                  maxLength={100}
                   required
                 />
               </div>
@@ -160,6 +187,7 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                  maxLength={255}
                   required
                 />
               </div>
@@ -175,6 +203,7 @@ const ContactForm = () => {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                  maxLength={200}
                 />
               </div>
 
@@ -190,6 +219,7 @@ const ContactForm = () => {
                   rows={4}
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
                   placeholder="Tell us about your interest in joining The Infinity Forum..."
+                  maxLength={2000}
                   required
                 />
               </div>

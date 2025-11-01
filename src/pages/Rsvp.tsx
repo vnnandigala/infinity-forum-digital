@@ -9,6 +9,33 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { z } from 'zod';
+
+const rsvpSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, 'Name is required')
+    .max(100, 'Name must be less than 100 characters'),
+  email: z.string()
+    .trim()
+    .email('Invalid email address')
+    .max(255, 'Email must be less than 255 characters'),
+  phone: z.string()
+    .trim()
+    .max(20, 'Phone number must be less than 20 characters')
+    .optional()
+    .or(z.literal('')),
+  company: z.string()
+    .trim()
+    .max(200, 'Company name must be less than 200 characters')
+    .optional()
+    .or(z.literal('')),
+  message: z.string()
+    .trim()
+    .max(1000, 'Message must be less than 1000 characters')
+    .optional()
+    .or(z.literal(''))
+});
 
 const Rsvp = () => {
   const navigate = useNavigate();
@@ -35,11 +62,18 @@ const Rsvp = () => {
     setIsSubmitting(true);
 
     try {
+      // Validate form data
+      const validatedData = rsvpSchema.parse(formData);
+      
       const { error } = await supabase
         .from('contact_submissions')
         .insert([
           {
-            ...formData,
+            name: validatedData.name,
+            email: validatedData.email,
+            phone: validatedData.phone || null,
+            company: validatedData.company || null,
+            message: validatedData.message || null,
             form_type: 'rsvp'
           }
         ]);
@@ -66,12 +100,19 @@ const Rsvp = () => {
       }, 2000);
 
     } catch (error) {
-      console.error('Error submitting RSVP:', error);
-      toast({
-        title: "Error",
-        description: "There was an issue with your RSVP. Please try again.",
-        variant: "destructive",
-      });
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an issue with your RSVP. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -155,6 +196,7 @@ const Rsvp = () => {
                     onChange={handleInputChange}
                     className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
                     placeholder="Enter your full name"
+                    maxLength={100}
                   />
                 </div>
 
@@ -171,6 +213,7 @@ const Rsvp = () => {
                     onChange={handleInputChange}
                     className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
                     placeholder="Enter your email"
+                    maxLength={255}
                   />
                 </div>
 
@@ -186,6 +229,7 @@ const Rsvp = () => {
                     onChange={handleInputChange}
                     className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
                     placeholder="Enter your phone number"
+                    maxLength={20}
                   />
                 </div>
 
@@ -201,6 +245,7 @@ const Rsvp = () => {
                     onChange={handleInputChange}
                     className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
                     placeholder="Enter your company"
+                    maxLength={200}
                   />
                 </div>
 
@@ -216,6 +261,7 @@ const Rsvp = () => {
                     onChange={handleInputChange}
                     className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400"
                     placeholder="Any dietary restrictions, questions, or special requests..."
+                    maxLength={1000}
                   />
                 </div>
 

@@ -8,6 +8,22 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { z } from 'zod';
+
+const contactSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, 'Name is required')
+    .max(100, 'Name must be less than 100 characters'),
+  email: z.string()
+    .trim()
+    .email('Invalid email address')
+    .max(255, 'Email must be less than 255 characters'),
+  message: z.string()
+    .trim()
+    .min(1, 'Message is required')
+    .max(2000, 'Message must be less than 2000 characters')
+});
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,19 +40,23 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Submitting contact form:', contactForm);
+      // Validate form data
+      const validatedData = contactSchema.parse({
+        name: contactForm.name,
+        email: contactForm.email,
+        message: contactForm.message
+      });
       
       const { error } = await supabase
         .from('contact_submissions')
         .insert({
-          name: contactForm.name,
-          email: contactForm.email,
-          message: contactForm.message,
+          name: validatedData.name,
+          email: validatedData.email,
+          message: validatedData.message,
           form_type: 'contact'
         });
 
       if (error) {
-        console.error('Error submitting contact form:', error);
         toast({
           title: "Error",
           description: "There was a problem submitting your message. Please try again.",
@@ -44,8 +64,6 @@ const Contact = () => {
         });
         return;
       }
-
-      console.log('Contact form submitted successfully');
       
       toast({
         title: "Message Sent Successfully!",
@@ -58,12 +76,19 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Unexpected error:', error);
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "An unexpected error occurred. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -146,6 +171,7 @@ const Contact = () => {
                     value={contactForm.name}
                     onChange={handleContactChange}
                     className="mt-2"
+                    maxLength={100}
                     required
                   />
                 </div>
@@ -159,6 +185,7 @@ const Contact = () => {
                     value={contactForm.email}
                     onChange={handleContactChange}
                     className="mt-2"
+                    maxLength={255}
                     required
                   />
                 </div>
@@ -173,6 +200,7 @@ const Contact = () => {
                     rows={4}
                     className="mt-2"
                     placeholder="Tell us how we can help you..."
+                    maxLength={2000}
                     required
                   />
                 </div>
