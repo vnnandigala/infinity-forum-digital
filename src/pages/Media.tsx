@@ -48,10 +48,11 @@ const Media = () => {
       url: 'https://youtu.be/RCd6wXYkJEc'
     },
     {
-      title: 'The Innovation Imperative',
-      description: 'Exploring breakthrough technologies that will define the next decade.',
-      duration: '38 min',
-      episode: 'Episode 11'
+      title: 'Giving Back through Angel Investments with Padma Alluri and Junicorn platform',
+      description: 'Exploring the intersection of philanthropy and strategic angel investing.',
+      duration: '42 min',
+      episode: 'Episode 2',
+      url: 'https://youtu.be/K2sCDkUupyk'
     },
     {
       title: 'Mindful Wealth: Beyond Financial Success',
