@@ -36,7 +36,7 @@ const UpcomingEvents = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">December 7th, 2024</span>
+                    <span className="font-semibold">November 29th, 2024</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
