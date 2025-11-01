@@ -41,10 +41,11 @@ const Media = () => {
 
   const podcasts = [
     {
-      title: 'Wisdom in Action: Leadership Lessons',
+      title: 'Wealth Management with Daniel Beckerman - Yale and Columbia University',
       description: 'A conversation with industry pioneers about transformative leadership.',
       duration: '45 min',
-      episode: 'Episode 12'
+      episode: 'Episode 1',
+      url: 'https://youtu.be/RCd6wXYkJEc'
     },
     {
       title: 'The Innovation Imperative',
@@ -233,9 +234,12 @@ const Media = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {podcasts.map((podcast, index) => (
-                <div 
+                <a 
                   key={index}
-                  className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group cursor-pointer"
+                  href={podcast.url || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-700/50 group cursor-pointer block"
                 >
                   <div className="mb-4">
                     <span className="text-amber-400 text-sm font-medium">{podcast.episode}</span>
@@ -254,7 +258,7 @@ const Media = () => {
                     Listen Now
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
