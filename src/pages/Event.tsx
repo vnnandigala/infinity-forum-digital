@@ -22,7 +22,7 @@ const Event = () => {
                 Infinity Forum
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-amber-400 mb-8">
-                This Afternoon: Wealth Management Re-imagined
+                Upcoming Session: A Deep Dive into Investments
               </h2>
             </div>
             
@@ -33,7 +33,7 @@ const Event = () => {
                   <Calendar className="w-6 h-6 text-amber-400 flex-shrink-0" />
                   <div>
                     <p className="text-slate-300 text-sm">Date & Time</p>
-                    <p className="text-white font-semibold">Friday, September 27th, 2–5 pm</p>
+                    <p className="text-white font-semibold">Friday, November 29th, 2–5 pm</p>
                   </div>
                 </div>
                 
