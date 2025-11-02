@@ -121,19 +121,50 @@ const Event = () => {
           </div>
         </section>
 
-        {/* Coming Next Section */}
+        {/* Past Sessions Section */}
         <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-12 text-center">Past Sessions</h3>
+            
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">September 27th: Wealth Management Re-imagined</h4>
+              
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">👉</div>
+                  <h5 className="font-semibold text-white mb-2">Wealth Management Discussion</h5>
+                  <p className="text-sm">A lively discussion around creating and preserving wealth while living a life rich with purpose.</p>
+                </div>
+                
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">🎧</div>
+                  <h5 className="font-semibold text-white mb-2">Featured Podcast</h5>
+                  <p className="text-sm">Pre-recorded podcast with Daniel Beckerman, Yale & Columbia graduate and New York-based wealth manager.</p>
+                </div>
+                
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">🤝</div>
+                  <h5 className="font-semibold text-white mb-2">Giving Back Initiative</h5>
+                  <p className="text-sm">Introduction to "Giving Back as Angel Investors" supporting underprivileged entrepreneurs in India.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Coming Next Section */}
+        <section className="py-16 px-6 bg-white/5">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">Coming Next</h3>
+            <h3 className="text-3xl font-bold text-white mb-12 text-center">Next Session</h3>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">✨</div>
-                <h4 className="text-xl font-semibold text-white mb-4">November Session</h4>
+                <div className="text-4xl mb-4">🧘</div>
+                <h4 className="text-xl font-semibold text-white mb-4">Spirituality and Well Being</h4>
                 <p className="text-slate-300">
-                  Following our W.I.S.D.O.M. framework, our November session will be a deep dive into 
-                  <span className="text-amber-400 font-semibold"> Investments</span>—exploring strategies 
-                  and opportunities for growing wealth with purpose.
+                  Following our W.I.S.D.O.M. framework, our next session will explore 
+                  <span className="text-amber-400 font-semibold"> Spirituality and Well Being</span>—discovering 
+                  practices and philosophies for holistic growth and inner peace.
                 </p>
               </div>
 

@@ -24,12 +24,12 @@ const UpcomingEvents = () => {
               <div className="flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    Investments Masterclass
+                    Deep Dive on Spectrum of Investments
                   </h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Explore investment strategies and opportunities for growing wealth with purpose. 
-                    Following our W.I.S.D.O.M. framework, this session will provide actionable insights 
-                    into strategic investing for high-net-worth individuals.
+                    Explore the full spectrum of investment opportunities and strategies for building wealth with purpose. 
+                    Following our W.I.S.D.O.M. framework, this session will provide comprehensive insights 
+                    into diverse investment options for high-net-worth individuals.
                   </p>
                 </div>
 
