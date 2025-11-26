@@ -34,10 +34,11 @@ const Media = () => {
       url: '/brochures/rescuing-lives-brochure.jpg'
     },
     {
-      title: 'The Art of Meaningful Philanthropy',
-      excerpt: 'How to create lasting impact through strategic giving.',
-      date: 'December 5, 2024',
-      readTime: '6 min read'
+      title: 'Infinity Investment 101 — Learn for free. Grow with guidance. Invest with confidence.',
+      excerpt: 'A FREE beginner-friendly investing class where anyone can learn the basics of building wealth.',
+      date: 'November 2024',
+      readTime: '5 min read',
+      url: '/infinity-investment-101'
     }
   ];
 
