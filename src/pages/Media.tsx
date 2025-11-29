@@ -275,10 +275,13 @@ const Media = () => {
         <section className="py-20 bg-slate-800/50">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 <BookOpen className="inline-block w-12 h-12 mr-4 text-amber-400" />
-                Giving that transforms
+                Limitless Impact
               </h2>
+              <h3 className="text-2xl font-semibold text-amber-400 mb-6">
+                Giving that transforms
+              </h3>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
                 In-depth articles exploring the intersection of wisdom, innovation, and impact.
               </p>
