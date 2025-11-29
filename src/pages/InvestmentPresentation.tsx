@@ -1,17 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Infinity, TrendingUp, Target, Users, Lightbulb, BookOpen, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import html2pdf from 'html2pdf.js';
+import PptxGenJS from 'pptxgenjs';
 import { toast } from 'sonner';
 
 const InvestmentPresentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDownloading, setIsDownloading] = useState(false);
   const navigate = useNavigate();
-  const presentationRef = useRef<HTMLDivElement>(null);
 
   const slides = [
     {
@@ -260,180 +259,229 @@ const InvestmentPresentation = () => {
     setCurrentSlide(index);
   };
 
-  const handleDownloadPDF = async () => {
-    if (!presentationRef.current) return;
-    
+  const handleDownloadPPT = async () => {
     setIsDownloading(true);
-    toast.info('Generating PDF... This may take a moment.');
+    toast.info('Generating PowerPoint... This may take a moment.');
 
     try {
-      const opt = {
-        margin: 0.5,
-        filename: 'Infinity-Forum-Investment-Presentation.pdf',
-        image: { type: 'jpeg' as const, quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, logging: false },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' as const }
-      };
-
-      // Create a temporary container with all slides
-      const tempContainer = document.createElement('div');
-      tempContainer.style.position = 'absolute';
-      tempContainer.style.left = '-9999px';
-      document.body.appendChild(tempContainer);
-
-      // Render all slides
-      for (let i = 0; i < slides.length; i++) {
-        const slideDiv = document.createElement('div');
-        slideDiv.style.width = '1100px';
-        slideDiv.style.minHeight = '800px';
-        slideDiv.style.padding = '40px';
-        slideDiv.style.backgroundColor = '#1e293b';
-        slideDiv.style.marginBottom = '20px';
-        slideDiv.style.pageBreakAfter = 'always';
-        
-        // Clone and render slide content
-        const slideContent = `
-          <div style="color: white; font-family: system-ui, -apple-system, sans-serif;">
-            <div style="text-align: center; margin-bottom: 40px;">
-              <h1 style="font-size: 42px; font-weight: bold; margin-bottom: 10px; color: #fbbf24;">${slides[i].title}</h1>
-              <p style="font-size: 20px; color: #fbbf24;">${slides[i].subtitle}</p>
-            </div>
-            <div style="font-size: 16px; line-height: 1.6;">
-              ${getSlideContentHTML(i)}
-            </div>
-            <div style="text-align: center; margin-top: 40px; color: #94a3b8; font-size: 14px;">
-              Slide ${i + 1} of ${slides.length} | The Infinity Forum
-            </div>
-          </div>
-        `;
-        slideDiv.innerHTML = slideContent;
-        tempContainer.appendChild(slideDiv);
-      }
-
-      await html2pdf().set(opt).from(tempContainer).save();
+      const pres = new PptxGenJS();
       
-      document.body.removeChild(tempContainer);
-      toast.success('PDF downloaded successfully!');
+      // Set presentation properties
+      pres.author = 'The Infinity Forum';
+      pres.company = 'The Infinity Forum';
+      pres.subject = 'Deep Dive on Spectrum of Investments';
+      pres.title = 'Investment Presentation - November 29th, 2025';
+
+      // Slide 1: Title Slide
+      const slide1 = pres.addSlide();
+      slide1.background = { color: '1e293b' };
+      slide1.addText('Deep Dive on Spectrum of Investments', {
+        x: 0.5, y: 1.5, w: 9, h: 1,
+        fontSize: 44, bold: true, color: 'fbbf24', align: 'center'
+      });
+      slide1.addText('November 29th, 2025 • 2:00 PM - 5:00 PM', {
+        x: 0.5, y: 2.7, w: 9, h: 0.5,
+        fontSize: 24, color: 'fbbf24', align: 'center'
+      });
+      slide1.addText('The Infinity Forum', {
+        x: 0.5, y: 3.5, w: 9, h: 0.5,
+        fontSize: 28, color: 'FFFFFF', align: 'center'
+      });
+      slide1.addText('Join us for an immersive exploration of investment opportunities across the spectrum—from traditional markets to alternative assets.', {
+        x: 1, y: 4.3, w: 8, h: 0.8,
+        fontSize: 18, color: 'e2e8f0', align: 'center'
+      });
+      slide1.addText('📍 1414 Rivona Drive, Waterford, MI 48328\n👥 Limited seating available', {
+        x: 1, y: 5.5, w: 8, h: 0.6,
+        fontSize: 16, color: 'cbd5e1', align: 'center'
+      });
+
+      // Slide 2: What You'll Learn
+      const slide2 = pres.addSlide();
+      slide2.background = { color: '1e293b' };
+      slide2.addText('What You\'ll Learn', {
+        x: 0.5, y: 0.5, w: 9, h: 0.7,
+        fontSize: 40, bold: true, color: 'FFFFFF', align: 'center'
+      });
+      slide2.addText('Comprehensive Investment Knowledge', {
+        x: 0.5, y: 1.3, w: 9, h: 0.4,
+        fontSize: 20, color: 'fbbf24', align: 'center'
+      });
+
+      const categories = [
+        { title: '📈 Traditional Investments', items: ['Stocks & ETFs', 'Bonds & Fixed Income', 'Mutual Funds', 'Index Funds'], x: 0.5, y: 2.2 },
+        { title: '🏢 Alternative Investments', items: ['Real Estate', 'Private Equity', 'Venture Capital', 'Angel Investing'], x: 5.2, y: 2.2 },
+        { title: '💎 Emerging Assets', items: ['Cryptocurrency', 'Digital Assets', 'Commodities', 'Precious Metals'], x: 0.5, y: 4.2 },
+        { title: '🎯 Portfolio Strategy', items: ['Diversification', 'Risk Management', 'Asset Allocation', 'Long-term Planning'], x: 5.2, y: 4.2 }
+      ];
+
+      categories.forEach(cat => {
+        slide2.addShape(pres.ShapeType.rect, {
+          x: cat.x, y: cat.y, w: 4.5, h: 1.8,
+          fill: { color: '334155', transparency: 50 }
+        });
+        slide2.addText(cat.title, {
+          x: cat.x, y: cat.y + 0.1, w: 4.5, h: 0.4,
+          fontSize: 18, bold: true, color: 'fbbf24'
+        });
+        slide2.addText(cat.items.map(i => '• ' + i).join('\n'), {
+          x: cat.x + 0.2, y: cat.y + 0.6, w: 4.1, h: 1.1,
+          fontSize: 14, color: 'e2e8f0'
+        });
+      });
+
+      // Slide 3: Session Structure
+      const slide3 = pres.addSlide();
+      slide3.background = { color: '1e293b' };
+      slide3.addText('Session Structure', {
+        x: 0.5, y: 0.5, w: 9, h: 0.7,
+        fontSize: 40, bold: true, color: 'FFFFFF', align: 'center'
+      });
+      slide3.addText('Three Hours of Deep Learning', {
+        x: 0.5, y: 1.3, w: 9, h: 0.4,
+        fontSize: 20, color: 'fbbf24', align: 'center'
+      });
+
+      const sessions = [
+        { emoji: '🕐', time: '2:00 PM - 2:45 PM', title: 'Introduction & Foundation', desc: 'Understanding the investment landscape and building blocks of wealth creation', y: 2.2 },
+        { emoji: '🕑', time: '2:45 PM - 4:00 PM', title: 'Deep Dive into Asset Classes', desc: 'Exploring each investment type with real-world examples and case studies', y: 3.5 },
+        { emoji: '🕓', time: '4:00 PM - 5:00 PM', title: 'Portfolio Building & Q&A', desc: 'Practical application, portfolio strategies, and answering your questions', y: 4.8 }
+      ];
+
+      sessions.forEach(session => {
+        slide3.addShape(pres.ShapeType.rect, {
+          x: 1, y: session.y, w: 8, h: 1,
+          fill: { color: 'fbbf24', transparency: 80 }
+        });
+        slide3.addText(`${session.emoji} ${session.time}`, {
+          x: 1.2, y: session.y + 0.1, w: 7.6, h: 0.3,
+          fontSize: 18, bold: true, color: 'FFFFFF'
+        });
+        slide3.addText(session.title, {
+          x: 1.2, y: session.y + 0.4, w: 7.6, h: 0.2,
+          fontSize: 16, bold: true, color: 'fbbf24'
+        });
+        slide3.addText(session.desc, {
+          x: 1.2, y: session.y + 0.65, w: 7.6, h: 0.3,
+          fontSize: 14, color: 'e2e8f0'
+        });
+      });
+
+      // Slide 4: Your Host
+      const slide4 = pres.addSlide();
+      slide4.background = { color: '1e293b' };
+      slide4.addText('Your Host', {
+        x: 0.5, y: 0.5, w: 9, h: 0.7,
+        fontSize: 40, bold: true, color: 'FFFFFF', align: 'center'
+      });
+      slide4.addText('Usha Nandigala', {
+        x: 0.5, y: 1.3, w: 9, h: 0.5,
+        fontSize: 32, bold: true, color: 'fbbf24', align: 'center'
+      });
+
+      const credentials = [
+        '✓ Ex-Amazon & Ex-GM Executive',
+        '✓ MBA from Purdue University',
+        '✓ Wealth Management Certificate from Columbia University',
+        '✓ Accredited Investor & Active Angel Investor',
+        '✓ Entrepreneur & Spiritual Guide'
+      ];
+
+      slide4.addText(credentials.join('\n'), {
+        x: 2, y: 2.5, w: 6, h: 2,
+        fontSize: 18, color: 'e2e8f0', lineSpacing: 28
+      });
+
+      slide4.addShape(pres.ShapeType.rect, {
+        x: 1.5, y: 4.8, w: 7, h: 0.8,
+        fill: { color: 'fbbf24', transparency: 80 }
+      });
+      slide4.addText('"I believe in empowering individuals to build wealth with wisdom, purpose, and integrity."', {
+        x: 1.7, y: 5, w: 6.6, h: 0.4,
+        fontSize: 16, italic: true, color: 'e2e8f0', align: 'center'
+      });
+
+      // Slide 5: Why Attend
+      const slide5 = pres.addSlide();
+      slide5.background = { color: '1e293b' };
+      slide5.addText('Why Attend?', {
+        x: 0.5, y: 0.5, w: 9, h: 0.7,
+        fontSize: 40, bold: true, color: 'FFFFFF', align: 'center'
+      });
+      slide5.addText('Transform Your Investment Journey', {
+        x: 0.5, y: 1.3, w: 9, h: 0.4,
+        fontSize: 20, color: 'fbbf24', align: 'center'
+      });
+
+      const benefits = [
+        { emoji: '🎯', title: 'Comprehensive Knowledge', desc: 'Gain a complete understanding of the investment spectrum—from basics to advanced strategies', x: 0.8, y: 2.2 },
+        { emoji: '💡', title: 'Practical Insights', desc: 'Learn from real-world examples and case studies that you can apply immediately', x: 5.2, y: 2.2 },
+        { emoji: '🤝', title: 'Network & Connect', desc: 'Meet like-minded individuals who are serious about building wealth with purpose', x: 0.8, y: 4.2 },
+        { emoji: '🚀', title: 'Accelerate Growth', desc: 'Fast-track your investment education and avoid costly mistakes', x: 5.2, y: 4.2 }
+      ];
+
+      benefits.forEach(benefit => {
+        slide5.addShape(pres.ShapeType.rect, {
+          x: benefit.x, y: benefit.y, w: 4, h: 1.6,
+          fill: { color: 'fbbf24', transparency: 85 }
+        });
+        slide5.addText(benefit.emoji, {
+          x: benefit.x + 0.2, y: benefit.y + 0.1, w: 3.6, h: 0.3,
+          fontSize: 28
+        });
+        slide5.addText(benefit.title, {
+          x: benefit.x + 0.2, y: benefit.y + 0.5, w: 3.6, h: 0.3,
+          fontSize: 16, bold: true, color: 'FFFFFF'
+        });
+        slide5.addText(benefit.desc, {
+          x: benefit.x + 0.2, y: benefit.y + 0.85, w: 3.6, h: 0.7,
+          fontSize: 13, color: 'e2e8f0'
+        });
+      });
+
+      // Slide 6: Ready to Join
+      const slide6 = pres.addSlide();
+      slide6.background = { color: '1e293b' };
+      slide6.addText('Ready to Join?', {
+        x: 0.5, y: 0.5, w: 9, h: 0.7,
+        fontSize: 40, bold: true, color: 'FFFFFF', align: 'center'
+      });
+      slide6.addText('Secure Your Spot Today', {
+        x: 0.5, y: 1.3, w: 9, h: 0.4,
+        fontSize: 20, color: 'fbbf24', align: 'center'
+      });
+
+      slide6.addShape(pres.ShapeType.rect, {
+        x: 2, y: 2.5, w: 6, h: 1.5,
+        fill: { color: 'fbbf24', transparency: 80 }
+      });
+      slide6.addText('Event Details', {
+        x: 2, y: 2.7, w: 6, h: 0.4,
+        fontSize: 24, bold: true, color: 'FFFFFF', align: 'center'
+      });
+      slide6.addText('📅 Friday, November 29th, 2025\n🕐 2:00 PM - 5:00 PM\n📍 1414 Rivona Drive, Waterford, MI 48328', {
+        x: 2, y: 3.2, w: 6, h: 1,
+        fontSize: 16, color: 'e2e8f0', align: 'center', lineSpacing: 24
+      });
+
+      slide6.addText('Limited seating • Registration required', {
+        x: 2, y: 4.5, w: 6, h: 0.3,
+        fontSize: 14, color: 'cbd5e1', align: 'center'
+      });
+
+      slide6.addText('Questions? Contact us at contact@infinityforum.com', {
+        x: 2, y: 5.5, w: 6, h: 0.3,
+        fontSize: 14, color: 'cbd5e1', align: 'center'
+      });
+
+      // Save the presentation
+      await pres.writeFile({ fileName: 'Infinity-Forum-Investment-Presentation.pptx' });
+      toast.success('PowerPoint downloaded successfully!');
     } catch (error) {
-      console.error('Error generating PDF:', error);
-      toast.error('Failed to generate PDF. Please try again.');
+      console.error('Error generating PowerPoint:', error);
+      toast.error('Failed to generate PowerPoint. Please try again.');
     } finally {
       setIsDownloading(false);
-    }
-  };
-
-  const getSlideContentHTML = (slideIndex: number) => {
-    // Simplified HTML versions of slide content for PDF
-    switch(slideIndex) {
-      case 0:
-        return `
-          <div style="text-align: center; padding: 20px;">
-            <h3 style="color: #fbbf24; margin-bottom: 20px;">The Infinity Forum</h3>
-            <p style="margin-bottom: 20px;">Join us for an immersive exploration of investment opportunities across the spectrum—from traditional markets to alternative assets.</p>
-            <div style="margin-top: 30px;">
-              <p>📍 1414 Rivona Drive, Waterford, MI 48328</p>
-              <p>👥 Limited seating available</p>
-            </div>
-          </div>
-        `;
-      case 1:
-        return `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-              <h4 style="color: #fbbf24; margin-bottom: 10px;">📈 Traditional Investments</h4>
-              <p>• Stocks & ETFs<br>• Bonds & Fixed Income<br>• Mutual Funds<br>• Index Funds</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-              <h4 style="color: #fbbf24; margin-bottom: 10px;">🏢 Alternative Investments</h4>
-              <p>• Real Estate<br>• Private Equity<br>• Venture Capital<br>• Angel Investing</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-              <h4 style="color: #fbbf24; margin-bottom: 10px;">💎 Emerging Assets</h4>
-              <p>• Cryptocurrency<br>• Digital Assets<br>• Commodities<br>• Precious Metals</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-              <h4 style="color: #fbbf24; margin-bottom: 10px;">🎯 Portfolio Strategy</h4>
-              <p>• Diversification<br>• Risk Management<br>• Asset Allocation<br>• Long-term Planning</p>
-            </div>
-          </div>
-        `;
-      case 2:
-        return `
-          <div>
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px; margin-bottom: 15px;">
-              <h4 style="margin-bottom: 10px;">🕐 2:00 PM - 2:45 PM</h4>
-              <p style="color: #fbbf24; font-weight: bold;">Introduction & Foundation</p>
-              <p>Understanding the investment landscape and building blocks of wealth creation</p>
-            </div>
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px; margin-bottom: 15px;">
-              <h4 style="margin-bottom: 10px;">🕑 2:45 PM - 4:00 PM</h4>
-              <p style="color: #fbbf24; font-weight: bold;">Deep Dive into Asset Classes</p>
-              <p>Exploring each investment type with real-world examples and case studies</p>
-            </div>
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px;">
-              <h4 style="margin-bottom: 10px;">🕓 4:00 PM - 5:00 PM</h4>
-              <p style="color: #fbbf24; font-weight: bold;">Portfolio Building & Q&A</p>
-              <p>Practical application, portfolio strategies, and answering your questions</p>
-            </div>
-          </div>
-        `;
-      case 3:
-        return `
-          <div style="text-align: center;">
-            <div style="font-size: 60px; margin-bottom: 20px;">👩‍💼</div>
-            <h3 style="color: #fbbf24; font-size: 28px; margin-bottom: 20px;">Usha Nandigala</h3>
-            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-              <p style="margin: 10px 0;"><span style="color: #fbbf24;">✓</span> Ex-Amazon & Ex-GM Executive</p>
-              <p style="margin: 10px 0;"><span style="color: #fbbf24;">✓</span> MBA from Purdue University</p>
-              <p style="margin: 10px 0;"><span style="color: #fbbf24;">✓</span> Wealth Management Certificate from Columbia University</p>
-              <p style="margin: 10px 0;"><span style="color: #fbbf24;">✓</span> Accredited Investor & Active Angel Investor</p>
-              <p style="margin: 10px 0;"><span style="color: #fbbf24;">✓</span> Entrepreneur & Spiritual Guide</p>
-            </div>
-            <div style="margin-top: 30px; padding: 20px; background: rgba(251, 191, 36, 0.1); border-radius: 10px;">
-              <p style="font-style: italic;">"I believe in empowering individuals to build wealth with wisdom, purpose, and integrity."</p>
-            </div>
-          </div>
-        `;
-      case 4:
-        return `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px;">
-              <div style="font-size: 40px; margin-bottom: 10px;">🎯</div>
-              <h4 style="margin-bottom: 10px;">Comprehensive Knowledge</h4>
-              <p>Gain a complete understanding of the investment spectrum—from basics to advanced strategies</p>
-            </div>
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px;">
-              <div style="font-size: 40px; margin-bottom: 10px;">💡</div>
-              <h4 style="margin-bottom: 10px;">Practical Insights</h4>
-              <p>Learn from real-world examples and case studies that you can apply immediately</p>
-            </div>
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px;">
-              <div style="font-size: 40px; margin-bottom: 10px;">🤝</div>
-              <h4 style="margin-bottom: 10px;">Network & Connect</h4>
-              <p>Meet like-minded individuals who are serious about building wealth with purpose</p>
-            </div>
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px;">
-              <div style="font-size: 40px; margin-bottom: 10px;">🚀</div>
-              <h4 style="margin-bottom: 10px;">Accelerate Growth</h4>
-              <p>Fast-track your investment education and avoid costly mistakes</p>
-            </div>
-          </div>
-        `;
-      case 5:
-        return `
-          <div style="text-align: center;">
-            <div style="background: rgba(251, 191, 36, 0.1); padding: 30px; border-radius: 10px; margin-bottom: 30px;">
-              <h3 style="font-size: 28px; margin-bottom: 20px;">Event Details</h3>
-              <p style="margin: 10px 0; font-size: 18px;"><span style="color: #fbbf24;">📅</span> Friday, November 29th, 2025</p>
-              <p style="margin: 10px 0; font-size: 18px;"><span style="color: #fbbf24;">🕐</span> 2:00 PM - 5:00 PM</p>
-              <p style="margin: 10px 0; font-size: 18px;"><span style="color: #fbbf24;">📍</span> 1414 Rivona Drive, Waterford, MI 48328</p>
-            </div>
-            <p style="font-size: 18px; margin: 20px 0;">Limited seating • Registration required</p>
-            <p style="margin-top: 30px;">Questions? Contact us at contact@infinityforum.com</p>
-          </div>
-        `;
-      default:
-        return '';
     }
   };
 
@@ -446,18 +494,18 @@ const InvestmentPresentation = () => {
         <div className="max-w-6xl mx-auto px-6 mb-6">
           <div className="flex justify-end">
             <Button
-              onClick={handleDownloadPDF}
+              onClick={handleDownloadPPT}
               disabled={isDownloading}
               className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold"
             >
               <Download className="w-4 h-4 mr-2" />
-              {isDownloading ? 'Generating PDF...' : 'Download as PDF'}
+              {isDownloading ? 'Generating PowerPoint...' : 'Download as PowerPoint'}
             </Button>
           </div>
         </div>
 
         {/* Presentation Container */}
-        <div className="max-w-6xl mx-auto px-6" ref={presentationRef}>
+        <div className="max-w-6xl mx-auto px-6">
           {/* Slide Content */}
           <div className="bg-slate-800/50 rounded-3xl p-12 border border-amber-400/20 shadow-2xl min-h-[600px] flex flex-col">
             {/* Slide Header */}
