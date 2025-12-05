@@ -24,24 +24,24 @@ const UpcomingEvents = () => {
               <div className="flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    Deep Dive on Spectrum of Investments
+                    Holistic Human Well Being
                   </h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Explore the full spectrum of investment opportunities and strategies for building wealth with purpose. 
+                    Explore holistic approaches to well-being that integrate physical, mental, and spiritual health. 
                     Following our W.I.S.D.O.M. framework, this session will provide comprehensive insights 
-                    into diverse investment options for high-net-worth individuals.
+                    into achieving balance and fulfillment for high-net-worth individuals.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">November 29th, 2024</span>
+                    <span className="font-semibold">January 31st, 2026</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">2:00 PM - 5:00 PM EST</span>
+                    <span className="font-semibold">2:00 PM - 6:00 PM EST</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
