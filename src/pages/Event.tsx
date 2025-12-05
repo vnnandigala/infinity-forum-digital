@@ -96,6 +96,32 @@ const Event = () => {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-12 text-center">Past Sessions</h3>
             
+            {/* November 29th Session */}
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">November 29th: Deep Dive into Investments</h4>
+              
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">📊</div>
+                  <h5 className="font-semibold text-white mb-2">Investment Spectrum</h5>
+                  <p className="text-sm">Explored the full spectrum of investment opportunities and strategies for building wealth with purpose.</p>
+                </div>
+                
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">💡</div>
+                  <h5 className="font-semibold text-white mb-2">W.I.S.D.O.M. Framework</h5>
+                  <p className="text-sm">Comprehensive insights into diverse investment options for high-net-worth individuals.</p>
+                </div>
+                
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">🎯</div>
+                  <h5 className="font-semibold text-white mb-2">Strategic Planning</h5>
+                  <p className="text-sm">Actionable strategies for portfolio diversification and long-term wealth creation.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* September 27th Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
               <h4 className="text-2xl font-semibold text-amber-400 mb-4">September 27th: Wealth Management Re-imagined</h4>
               
