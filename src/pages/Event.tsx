@@ -155,12 +155,12 @@ const Event = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🧘</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Spirituality and Well Being</h4>
+                <div className="text-4xl mb-4">🚀</div>
+                <h4 className="text-xl font-semibold text-white mb-4">Disruptions and Innovations</h4>
                 <p className="text-slate-300">
                   Following our W.I.S.D.O.M. framework, our next session will explore 
-                  <span className="text-amber-400 font-semibold"> Spirituality and Well Being</span>—discovering 
-                  practices and philosophies for holistic growth and inner peace.
+                  <span className="text-amber-400 font-semibold"> Disruptions and Innovations</span>—discovering 
+                  emerging technologies and transformative ideas shaping the future of business and investment.
                 </p>
               </div>
 
