@@ -73,46 +73,6 @@ const Event = () => {
           </div>
         </section>
 
-        {/* Today's Focus Section */}
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">Today's Focus</h3>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Discussion Focus */}
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">👉</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Wealth Management Discussion</h4>
-                <p className="text-slate-300">
-                  Come prepared for a lively discussion around Wealth Management—how to create and preserve wealth 
-                  while living a life rich with purpose.
-                </p>
-              </div>
-
-              {/* Podcast Feature */}
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🎧</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Featured Podcast</h4>
-                <p className="text-slate-300">
-                  We will feature a pre-recorded podcast with <span className="text-amber-400 font-semibold">Daniel Beckerman</span>, 
-                  a distinguished Yale & Columbia graduate and New-York based wealth manager whose insights will challenge 
-                  and expand the way you think about money and legacy.
-                </p>
-              </div>
-
-              {/* Angel Investor Initiative */}
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🤝</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Giving Back Initiative</h4>
-                <p className="text-slate-300">
-                  I will introduce "Giving Back as Angel Investors," an initiative to support carefully vetted 
-                  underprivileged entrepreneurs in India, transforming financial success into meaningful social impact.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Special Takeaways */}
         <section className="py-16 px-6 bg-white/5">
           <div className="max-w-4xl mx-auto text-center">
