@@ -58,10 +58,11 @@ const Media = () => {
       url: 'https://youtu.be/K2sCDkUupyk'
     },
     {
-      title: 'Deepdive on Spectrum of Investments for clarity and opportunities',
-      description: 'Coming soon in December 2025',
-      duration: '42 min',
-      episode: 'Episode 3'
+      title: 'Deep Dive on Spectrum of Investments for Clarity and Opportunities',
+      description: 'Understanding your investment spectrum is the first step toward building lasting wealth. This episode explores how clarity in your options—from traditional assets to emerging opportunities—empowers confident, purpose-driven investment decisions.',
+      duration: '45 min',
+      episode: 'Episode 3',
+      url: 'https://youtu.be/VSrX6FJtVtQ'
     }
   ];
 
