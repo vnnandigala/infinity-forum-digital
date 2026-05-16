@@ -224,6 +224,71 @@ const Media = () => {
           </div>
         </section>
 
+        {/* Spotlight Podcast Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-900 via-amber-950/20 to-slate-900 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-600 rounded-full blur-3xl"></div>
+          </div>
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4">
+                ✦ Spotlight Episode ✦
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                A Conversation Worth <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500">Hearing</span>
+              </h2>
+              <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+                Our latest feature — an intimate, unfiltered exchange of ideas you won't want to miss.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-5 gap-8 items-center">
+              <div className="lg:col-span-3 relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-2xl blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/xTJmqCGTq58"
+                    title="Spotlight Podcast"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <div className="lg:col-span-2 space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-500/50"></div>
+                  <Headphones className="w-6 h-6 text-amber-400" />
+                  <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-500/50"></div>
+                </div>
+                <h3 className="text-3xl font-bold text-white leading-tight">
+                  Wisdom, Wealth & the Road Ahead
+                </h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Step inside a candid dialogue that traverses the principles of conscious wealth, the discipline of long-term thinking, and the human side of building lasting legacies. A featured conversation from The Infinity Forum.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-amber-500/20 text-amber-300 text-xs font-medium">Wealth</span>
+                  <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-amber-500/20 text-amber-300 text-xs font-medium">Wisdom</span>
+                  <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-amber-500/20 text-amber-300 text-xs font-medium">Legacy</span>
+                  <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-amber-500/20 text-amber-300 text-xs font-medium">Mentorship</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=xTJmqCGTq58"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg"
+                >
+                  Watch on YouTube
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Podcasts Section */}
         <section className="py-20 bg-slate-900">
           <div className="max-w-7xl mx-auto px-6">
