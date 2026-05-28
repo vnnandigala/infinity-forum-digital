@@ -149,31 +149,29 @@ const Rsvp = () => {
               {/* Event Info Card */}
               <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">
-                  Wealth & Estate Planning Insightful Event
+                  {nextEvent.title}
                 </h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">September 27th, 2024</span>
+                    <span className="font-semibold">{nextEvent.dateShort}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">4:00 PM - 7:00 PM EST</span>
+                    <span className="font-semibold">{nextEvent.timeRange}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <MapPin className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">Michigan & Online via Zoom</span>
+                    <span className="font-semibold">{nextEvent.location}</span>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-slate-700">
                   <p className="text-slate-300 leading-relaxed">
-                    Join fellow forum members for an intensive deep-dive into advanced wealth preservation strategies, 
-                    estate planning techniques, and legacy building methodologies. This exclusive session features 
-                    expert speakers and interactive discussions.
+                    {nextEvent.description}
                   </p>
                 </div>
               </div>
