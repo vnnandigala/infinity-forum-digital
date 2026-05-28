@@ -180,12 +180,12 @@ const Event = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🚀</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Disruptions and Innovations</h4>
+                <div className="text-4xl mb-4">🏛️</div>
+                <h4 className="text-xl font-semibold text-white mb-4">Ownership and Legacy</h4>
                 <p className="text-slate-300">
                   Following our W.I.S.D.O.M. framework, our next session will explore 
-                  <span className="text-amber-400 font-semibold"> Disruptions and Innovations</span>—discovering 
-                  emerging technologies and transformative ideas shaping the future of business and investment.
+                  <span className="text-amber-400 font-semibold"> Ownership and Legacy</span>—the principles of 
+                  stewardship, succession, and building a lasting impact for generations to come.
                 </p>
               </div>
 
