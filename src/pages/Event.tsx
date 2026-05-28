@@ -22,7 +22,7 @@ const Event = () => {
                 Infinity Forum
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-amber-400 mb-8">
-                Upcoming Session: Holistic Human Well Being
+                Upcoming Session: Ownership and Legacy
               </h2>
             </div>
             
@@ -33,7 +33,7 @@ const Event = () => {
                   <Calendar className="w-6 h-6 text-amber-400 flex-shrink-0" />
                   <div>
                     <p className="text-slate-300 text-sm">Date & Time</p>
-                    <p className="text-white font-semibold">Friday, January 31st, 2026, 2–6 pm</p>
+                    <p className="text-white font-semibold">Saturday, May 30th, 2026, 1–5 pm</p>
                   </div>
                 </div>
                 
@@ -96,6 +96,31 @@ const Event = () => {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-12 text-center">Past Sessions</h3>
             
+            {/* January 31st Session */}
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">January 31st: Holistic Human Well Being</h4>
+              
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">🧘</div>
+                  <h5 className="font-semibold text-white mb-2">Mind, Body & Spirit</h5>
+                  <p className="text-sm">Explored holistic approaches integrating physical, mental, and spiritual health for sustained vitality.</p>
+                </div>
+                
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">💡</div>
+                  <h5 className="font-semibold text-white mb-2">W.I.S.D.O.M. Framework</h5>
+                  <p className="text-sm">Comprehensive insights into achieving balance and fulfillment for high-net-worth individuals.</p>
+                </div>
+                
+                <div className="text-slate-300">
+                  <div className="text-3xl mb-2">🌿</div>
+                  <h5 className="font-semibold text-white mb-2">Sustainable Practices</h5>
+                  <p className="text-sm">Actionable rituals and reflective tools to cultivate lasting well-being beyond material success.</p>
+                </div>
+              </div>
+            </div>
+
             {/* November 29th Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
               <h4 className="text-2xl font-semibold text-amber-400 mb-4">November 29th: Deep Dive into Investments</h4>
@@ -155,12 +180,12 @@ const Event = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🚀</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Disruptions and Innovations</h4>
+                <div className="text-4xl mb-4">🏛️</div>
+                <h4 className="text-xl font-semibold text-white mb-4">Ownership and Legacy</h4>
                 <p className="text-slate-300">
                   Following our W.I.S.D.O.M. framework, our next session will explore 
-                  <span className="text-amber-400 font-semibold"> Disruptions and Innovations</span>—discovering 
-                  emerging technologies and transformative ideas shaping the future of business and investment.
+                  <span className="text-amber-400 font-semibold"> Ownership and Legacy</span>—the principles of 
+                  stewardship, succession, and building a lasting impact for generations to come.
                 </p>
               </div>
 
