@@ -41,7 +41,7 @@ const Event = () => {
                   <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
                   <div>
                     <p className="text-slate-300 text-sm">Location</p>
-                    <p className="text-white font-semibold">1414 Rivona Drive, Waterford, MI 48328</p>
+                    <p className="text-white font-semibold">1414 Rivona Dr</p>
                   </div>
                 </div>
               </div>
