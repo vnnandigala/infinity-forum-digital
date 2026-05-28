@@ -2,6 +2,7 @@
 import React from 'react';
 import { Infinity, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { nextEvent } from '@/config/nextEvent';
 
 const Hero = () => {
   const navigate = useNavigate();
