@@ -25,30 +25,28 @@ const UpcomingEvents = () => {
               <div className="flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    Ownership and Legacy
+                    {nextEvent.title}
                   </h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Explore the principles of true ownership and the legacy you build for generations to come. 
-                    Following our W.I.S.D.O.M. framework, this session will dive into stewardship, succession, 
-                    and the lasting impact of intentional wealth and values for high-net-worth families.
+                    {nextEvent.description}
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">May 30th, 2026</span>
+                    <span className="font-semibold">{nextEvent.dateShort}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">1:00 PM - 5:00 PM EST</span>
+                    <span className="font-semibold">{nextEvent.timeRange}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3 text-slate-200">
                     <MapPin className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">Exclusive Member Location</span>
-                    <span className="text-slate-400 text-sm">(Details sent to confirmed attendees)</span>
+                    <span className="font-semibold">{nextEvent.location}</span>
+                    <span className="text-slate-400 text-sm">{nextEvent.locationNote}</span>
                   </div>
                 </div>
               </div>
