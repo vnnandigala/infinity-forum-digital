@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { nextEvent } from '@/config/nextEvent';
 import { z } from 'zod';
 
 const rsvpSchema = z.object({
