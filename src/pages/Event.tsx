@@ -47,15 +47,6 @@ const Event = () => {
               </div>
             </div>
 
-            {/* Presentation Button */}
-            <div className="text-center mb-12">
-              <Button
-                onClick={() => navigate('/investment-presentation')}
-                className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-bold text-lg px-8 py-6 h-auto"
-              >
-                📊 View Event Presentation
-              </Button>
-            </div>
           </div>
         </section>
 
