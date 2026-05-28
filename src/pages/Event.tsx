@@ -23,7 +23,7 @@ const Event = () => {
                 Infinity Forum
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-amber-400 mb-8">
-                Upcoming Session: Ownership and Legacy
+                Upcoming Session: {nextEvent.title}
               </h2>
             </div>
             
@@ -34,7 +34,7 @@ const Event = () => {
                   <Calendar className="w-6 h-6 text-amber-400 flex-shrink-0" />
                   <div>
                     <p className="text-slate-300 text-sm">Date & Time</p>
-                    <p className="text-white font-semibold">Saturday, May 30th, 2026, 1–5 pm</p>
+                    <p className="text-white font-semibold">{nextEvent.dateLong}, {nextEvent.timeRange}</p>
                   </div>
                 </div>
                 
@@ -42,7 +42,7 @@ const Event = () => {
                   <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
                   <div>
                     <p className="text-slate-300 text-sm">Location</p>
-                    <p className="text-white font-semibold">1414 Rivona Dr</p>
+                    <p className="text-white font-semibold">{nextEvent.location}</p>
                   </div>
                 </div>
               </div>
