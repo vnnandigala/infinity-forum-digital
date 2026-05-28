@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { nextEvent } from '@/config/nextEvent';
 
 const Event = () => {
   const navigate = useNavigate();
