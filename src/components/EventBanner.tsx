@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { nextEvent } from '@/config/nextEvent';
 
 const EventBanner = () => {
   const [isVisible, setIsVisible] = React.useState(true);
@@ -19,13 +20,13 @@ const EventBanner = () => {
           </div>
           
           <div className="hidden sm:flex items-center space-x-4 text-sm">
-            <span className="font-medium">Ownership and Legacy</span>
+            <span className="font-medium">{nextEvent.title}</span>
             <span>•</span>
-            <span>May 30th, 1-5 PM</span>
+            <span>{nextEvent.dateCompact}, {nextEvent.timeShort}</span>
           </div>
           
           <div className="sm:hidden text-sm font-medium">
-            Ownership & Legacy - May 30th
+            {nextEvent.shortTitle} - {nextEvent.dateCompact}
           </div>
         </div>
         
