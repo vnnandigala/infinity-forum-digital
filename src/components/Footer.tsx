@@ -62,9 +62,9 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-amber-400" />
                 <span className="text-slate-300">248-295-1770</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-amber-400" />
-                <span className="text-slate-300">Private venues worldwide</span>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-amber-400 mt-1 flex-shrink-0" />
+                <span className="text-slate-300">1414 Rivona Drive, Waterford, MI 48328</span>
               </div>
               <Dialog open={contactOpen} onOpenChange={setContactOpen}>
                 <DialogTrigger asChild>

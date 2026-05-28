@@ -152,7 +152,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Location</p>
-                    <p className="text-slate-300">Private venues worldwide</p>
+                    <p className="text-slate-300">1414 Rivona Drive, Waterford, MI 48328</p>
                   </div>
                 </div>
               </div>
