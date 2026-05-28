@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { nextEvent } from '@/config/nextEvent';
 
 const EventBanner = () => {
   const [isVisible, setIsVisible] = React.useState(true);
