@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain, GraduationCap, Target } from 'lucide-react';
+import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain, GraduationCap, Target, Compass } from 'lucide-react';
 
 const WisdomFramework = () => {
   const [selectedImpact, setSelectedImpact] = useState<string | null>(null);
