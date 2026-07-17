@@ -186,7 +186,7 @@ const Event = () => {
                 <h4 className="text-xl font-semibold text-white mb-4">Learn More</h4>
                 <p className="text-slate-300 mb-4">
                   Visit <span className="text-amber-400 font-semibold">InfinityForum.club</span> to learn more 
-                  about our mission of Limitless Learning, Limitless Impact.
+                  about our journey: Wisdom. Beyond. Impact.
                 </p>
                 <Button 
                   onClick={() => window.open('https://InfinityForum.club', '_blank')}
