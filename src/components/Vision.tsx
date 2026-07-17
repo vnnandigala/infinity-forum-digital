@@ -37,27 +37,17 @@ const Vision = () => {
           </div>
 
           {/* BEYOND */}
-          <a
-            href="https://beyond-wine.vercel.app/membership"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-center group block rounded-2xl p-6 -m-6 bg-white/60 backdrop-blur-sm border border-amber-500/20 shadow-md hover:shadow-2xl hover:-translate-y-2 hover:border-amber-500/60 transition-all duration-300 cursor-pointer relative"
-            aria-label="Explore Beyond membership"
-          >
+          <div className="text-center group">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-amber-500 to-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
               <Compass className="w-10 h-10 text-white" />
             </div>
             <h3 className="text-3xl font-bold text-slate-900 mb-2">BEYOND</h3>
             <p className="text-amber-600 font-semibold mb-4">Where Wisdom Becomes Opportunity</p>
-            <p className="text-slate-700 leading-relaxed mb-4">
-              Beyond is our exclusive circle where members turn wisdom into action—unlocking
-              curated investments, deep relationships, and rare opportunities alongside a
-              community of exceptional builders.
+            <p className="text-slate-700 leading-relaxed">
+              Apply that wisdom through investments, relationships, and opportunities—turning
+              insight into action alongside a community of exceptional builders.
             </p>
-            <span className="inline-flex items-center text-amber-600 font-semibold group-hover:text-amber-700">
-              Explore Beyond →
-            </span>
-          </a>
+          </div>
 
           {/* IMPACT */}
           <div className="text-center group">
