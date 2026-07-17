@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain, GraduationCap, Target, Compass } from 'lucide-react';
+import { DollarSign, TrendingUp, Heart, Zap, Shield, Users, HandHeart, Building, Brain, GraduationCap, Target, Compass, Briefcase, Sparkles, Handshake, ArrowUpRight } from 'lucide-react';
 
 const WisdomFramework = () => {
   const [selectedImpact, setSelectedImpact] = useState<string | null>(null);
@@ -154,10 +154,22 @@ const WisdomFramework = () => {
         </div>
 
         {/* BEYOND Section */}
-        <div className="bg-gradient-to-br from-amber-500/10 to-yellow-600/10 backdrop-blur-sm rounded-3xl p-12 mb-12 border border-amber-400/30">
+        <a
+          href="https://beyond-wine.vercel.app/membership"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block bg-gradient-to-br from-amber-500/10 to-yellow-600/10 backdrop-blur-sm rounded-3xl p-12 mb-12 border border-amber-400/30 hover:border-amber-400/70 hover:from-amber-500/20 hover:to-yellow-600/20 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 transform hover:-translate-y-1 cursor-pointer relative overflow-hidden"
+        >
+          <div className="absolute top-6 right-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+            <div className="flex items-center gap-2 text-amber-400 text-sm font-semibold">
+              <span>Explore BEYOND</span>
+              <ArrowUpRight className="w-5 h-5" />
+            </div>
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-5xl font-bold text-white mb-4 flex items-center justify-center gap-4">
-              <Compass className="w-12 h-12 text-amber-500" />
+              <Compass className="w-12 h-12 text-amber-500 group-hover:rotate-45 transition-transform duration-500" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">BEYOND</span>
             </h2>
             <h3 className="text-2xl font-semibold text-amber-400 mb-8">
@@ -173,20 +185,29 @@ const WisdomFramework = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10">
+            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10 group-hover:border-amber-400/40 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Briefcase className="w-7 h-7 text-slate-900" />
+              </div>
               <h4 className="text-lg font-bold text-amber-400 mb-2">Investments</h4>
               <p className="text-slate-300">Deploy capital into vetted deals and aligned ventures.</p>
             </div>
-            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10">
+            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10 group-hover:border-amber-400/40 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Handshake className="w-7 h-7 text-slate-900" />
+              </div>
               <h4 className="text-lg font-bold text-amber-400 mb-2">Relationships</h4>
               <p className="text-slate-300">Build trusted connections with exceptional peers.</p>
             </div>
-            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10">
+            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10 group-hover:border-amber-400/40 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Sparkles className="w-7 h-7 text-slate-900" />
+              </div>
               <h4 className="text-lg font-bold text-amber-400 mb-2">Opportunities</h4>
               <p className="text-slate-300">Access private circles and opportunities reserved for members.</p>
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Limitless Impact Section */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">

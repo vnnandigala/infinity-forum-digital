@@ -1,75 +1,25 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Users, Gift, TrendingUp, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { nextEvent } from '@/config/nextEvent';
 
 const Event = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Header />
-      
+
       <div className="pt-20">
         {/* Hero Section */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <span className="text-6xl mb-4 block">🌟</span>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Infinity Forum
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-amber-400 mb-8">
-                Upcoming Session: {nextEvent.title}
-              </h2>
-            </div>
-            
-            {/* Event Details Card */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl mb-8">
-              <div className="flex items-center justify-center space-x-4">
-                <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                <div className="text-left">
-                  <p className="text-slate-300 text-sm">Location</p>
-                  <p className="text-white font-semibold">{nextEvent.location}</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Welcome Section */}
-        <section className="py-16 px-6 bg-white/5">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">Welcome</h3>
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-              <p className="text-slate-200 text-lg leading-relaxed text-center">
-                I'm <span className="text-amber-400 font-semibold">Usha Nandigala</span> – Ex-Amazon, Ex-GM, MBA (Purdue), 
-                Wealth Management (Columbia), Accredited Investor, Entrepreneur & Spiritual—and I'm excited to host 
-                the inaugural Infinity Forum gathering.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Special Takeaways */}
-        <section className="py-16 px-6 bg-white/5">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center mb-8">
-              <Gift className="w-8 h-8 text-amber-400 mr-3" />
-              <h3 className="text-3xl font-bold text-white">Special Takeaways</h3>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-              <div className="text-4xl mb-4">💡</div>
-              <p className="text-slate-200 text-lg leading-relaxed">
-                You'll receive giveaways and reflective tools designed to help you develop a lasting mindset 
-                and philosophy of wealth management, offering actionable insights long after the event.
-              </p>
-            </div>
+            <span className="text-6xl mb-4 block">🌟</span>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Infinity Forum Sessions
+            </h1>
+            <p className="text-xl text-slate-300 leading-relaxed">
+              A journey through <span className="text-amber-400 font-semibold">Wisdom. Beyond. Impact.</span> —
+              curated conversations with exceptional individuals learning with purpose, building with
+              intention, and creating an enduring legacy.
+            </p>
           </div>
         </section>
 
@@ -77,24 +27,21 @@ const Event = () => {
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-12 text-center">Past Sessions</h3>
-            
+
             {/* Holistic Human Well Being Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
               <h4 className="text-2xl font-semibold text-amber-400 mb-4">Holistic Human Well Being</h4>
-              
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">🧘</div>
                   <h5 className="font-semibold text-white mb-2">Mind, Body & Spirit</h5>
                   <p className="text-sm">Explored holistic approaches integrating physical, mental, and spiritual health for sustained vitality.</p>
                 </div>
-                
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">💡</div>
                   <h5 className="font-semibold text-white mb-2">W.I.S.D.O.M. Framework</h5>
                   <p className="text-sm">Comprehensive insights into achieving balance and fulfillment for high-net-worth individuals.</p>
                 </div>
-                
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">🌿</div>
                   <h5 className="font-semibold text-white mb-2">Sustainable Practices</h5>
@@ -106,20 +53,17 @@ const Event = () => {
             {/* Deep Dive into Investments Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
               <h4 className="text-2xl font-semibold text-amber-400 mb-4">Deep Dive into Investments</h4>
-              
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">📊</div>
                   <h5 className="font-semibold text-white mb-2">Investment Spectrum</h5>
                   <p className="text-sm">Explored the full spectrum of investment opportunities and strategies for building wealth with purpose.</p>
                 </div>
-                
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">💡</div>
                   <h5 className="font-semibold text-white mb-2">W.I.S.D.O.M. Framework</h5>
                   <p className="text-sm">Comprehensive insights into diverse investment options for high-net-worth individuals.</p>
                 </div>
-                
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">🎯</div>
                   <h5 className="font-semibold text-white mb-2">Strategic Planning</h5>
@@ -131,87 +75,23 @@ const Event = () => {
             {/* Wealth Management Re-imagined Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
               <h4 className="text-2xl font-semibold text-amber-400 mb-4">Wealth Management Re-imagined</h4>
-              
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">👉</div>
                   <h5 className="font-semibold text-white mb-2">Wealth Management Discussion</h5>
                   <p className="text-sm">A lively discussion around creating and preserving wealth while living a life rich with purpose.</p>
                 </div>
-                
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">🎧</div>
                   <h5 className="font-semibold text-white mb-2">Featured Podcast</h5>
                   <p className="text-sm">Pre-recorded podcast with Daniel Beckerman, Yale & Columbia graduate and New York-based wealth manager.</p>
                 </div>
-                
                 <div className="text-slate-300">
                   <div className="text-3xl mb-2">🤝</div>
                   <h5 className="font-semibold text-white mb-2">Giving Back Initiative</h5>
                   <p className="text-sm">Introduction to "Giving Back as Angel Investors" supporting underprivileged entrepreneurs in India.</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Coming Next Section */}
-        <section className="py-16 px-6 bg-white/5">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">Next Session</h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🏛️</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Ownership and Legacy</h4>
-                <p className="text-slate-300">
-                  Following our W.I.S.D.O.M. framework, our next session will explore 
-                  <span className="text-amber-400 font-semibold"> Ownership and Legacy</span>—the principles of 
-                  stewardship, succession, and building a lasting impact for generations to come.
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <div className="text-4xl mb-4">🌐</div>
-                <h4 className="text-xl font-semibold text-white mb-4">Learn More</h4>
-                <p className="text-slate-300 mb-4">
-                  Visit <span className="text-amber-400 font-semibold">InfinityForum.club</span> to learn more 
-                  about our journey: Wisdom. Beyond. Impact.
-                </p>
-                <Button 
-                  onClick={() => window.open('https://InfinityForum.club', '_blank')}
-                  className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold"
-                >
-                  Visit Website
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 px-6 bg-gradient-to-r from-amber-500/20 to-yellow-600/20">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-white mb-6">Ready to Join Us?</h3>
-            <p className="text-slate-200 text-lg mb-8">
-              Reserve your spot for this transformative afternoon of wealth management insights and community building.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => navigate('/rsvp')}
-                className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-900 font-semibold px-8 py-3 text-lg"
-              >
-                RSVP Now
-              </Button>
-              
-              <Button 
-                onClick={() => navigate('/')}
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-3 text-lg"
-              >
-                Back to Home
-              </Button>
             </div>
           </div>
         </section>

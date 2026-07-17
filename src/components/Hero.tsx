@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { Infinity, Calendar } from 'lucide-react';
+import { Infinity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { nextEvent } from '@/config/nextEvent';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -55,13 +54,6 @@ const Hero = () => {
               A peer-to-peer network of successful investors, entrepreneurs, and corporate leaders, driving intellectual growth, wealth creation, and social impact through collaboration and mentorship.
             </p>
 
-            {/* Event Badge */}
-            <div className="mb-8 animate-fade-in animate-delay-500">
-              <div className="inline-flex items-center bg-amber-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full px-6 py-3 text-amber-300">
-                <Calendar className="w-4 h-4 mr-2" />
-                <span className="text-sm font-semibold">Next Event: {nextEvent.shortTitle}</span>
-              </div>
-            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-600">
