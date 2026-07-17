@@ -47,7 +47,7 @@ const Hero = () => {
 
             {/* Tagline */}
             <p className="text-2xl md:text-3xl text-slate-200 mb-6 font-light animate-fade-in animate-delay-200">
-              Limitless Learning. Limitless Impact.
+              Wisdom. Beyond. Impact.
             </p>
 
             {/* Description */}

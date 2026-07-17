@@ -1,51 +1,64 @@
-
 import React from 'react';
-import { Target, Eye, Compass } from 'lucide-react';
+import { BookOpen, Compass, Award } from 'lucide-react';
 
 const Vision = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Vision statement */}
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Vision</span>
+          </h2>
+          <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
+            To build a community of exceptional individuals on a journey from
+            <span className="font-semibold text-slate-900"> WISDOM </span> to
+            <span className="font-semibold text-slate-900"> BEYOND </span> to
+            <span className="font-semibold text-slate-900"> IMPACT</span>—learning with purpose,
+            building with intention, and creating an enduring legacy for generations to come.
+          </p>
+          <p className="mt-4 text-amber-600 font-semibold tracking-wide">
+            Wisdom. Beyond. Impact.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-3 gap-12">
-          {/* Vision */}
+          {/* WISDOM */}
           <div className="text-center group">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Eye className="w-10 h-10 text-white" />
+              <BookOpen className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-center">
-              <span className="mr-2">🌠</span> Vision
-            </h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-2">WISDOM</h3>
+            <p className="text-amber-600 font-semibold mb-4">The Foundation for Extraordinary Decisions</p>
             <p className="text-slate-700 leading-relaxed">
-              A private community of influential wealth creators and investors engaged in transformative dialogue on human well-being, 
-              with a shared focus on giving back and investing in the future, and a dedicated effort to include women in the community.
+              Learn the right way to think. Sharpen judgment through peer-to-peer dialogue,
+              expert insight, and living W.I.S.D.O.M.—the mental models behind every great decision.
             </p>
           </div>
 
-          {/* Mission */}
+          {/* BEYOND */}
           <div className="text-center group">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-amber-500 to-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Target className="w-10 h-10 text-white" />
+              <Compass className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-center">
-              <span className="mr-2">🎯</span> Mission
-            </h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-2">BEYOND</h3>
+            <p className="text-amber-600 font-semibold mb-4">Where Wisdom Becomes Opportunity</p>
             <p className="text-slate-700 leading-relaxed">
-              We cultivate a world-class intellectual ecosystem to exchange ideas, challenge the status quo, 
-              and explore expert insights—shaping the future with clarity, foresight, and collective wisdom.
+              Apply that wisdom through investments, relationships, and opportunities—
+              turning ideas into ventures and insight into action.
             </p>
           </div>
 
-          {/* Purpose */}
+          {/* IMPACT */}
           <div className="text-center group">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-purple-500 to-violet-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Compass className="w-10 h-10 text-white" />
+              <Award className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center justify-center">
-              <span className="mr-2">🤝</span> Purpose
-            </h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-2">IMPACT</h3>
+            <p className="text-amber-600 font-semibold mb-4">Where Success Becomes Legacy</p>
             <p className="text-slate-700 leading-relaxed">
-              An exclusive intellectual community for accomplished individuals seeking a refined space 
-              for strategic dialogue, financial empowerment, personal evolution, and meaningful impact.
+              Create lasting wealth, significance, and legacy through mentorship,
+              philanthropy, and mission-aligned investment that outlives us.
             </p>
           </div>
         </div>

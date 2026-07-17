@@ -32,8 +32,8 @@ const Footer = () => {
               <span className="text-2xl font-bold">The Infinity Forum</span>
             </div>
             <p className="text-slate-300 leading-relaxed">
-              Limitless Learning. Limitless Impact. A private community of influential wealth creators, 
-              visionary leaders, and deep thinkers.
+              Wisdom. Beyond. Impact. A private community of exceptional individuals on a journey
+              from learning with purpose to building with intention and creating an enduring legacy.
             </p>
           </div>
 
