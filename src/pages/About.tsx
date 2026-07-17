@@ -17,8 +17,6 @@ const About = () => {
         <div>
           <FocusAreas />
         </div>
-        
-        <div className="bg-white py-8"></div>
       </div>
 
       <Footer />
