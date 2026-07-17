@@ -255,7 +255,7 @@ const WisdomFramework = () => {
         <div className="bg-gradient-to-r from-amber-500/20 to-yellow-600/20 backdrop-blur-sm rounded-2xl p-6 border-2 border-amber-400/30 shadow-lg">
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-xl font-bold text-white leading-relaxed">
-              ∞ These pillars form the foundation of our approach to personal and professional growth, covering both limitless learning and limitless impact. ∞
+              ∞ The journey from WISDOM to BEYOND to IMPACT—learning with purpose, building with intention, and creating an enduring legacy. ∞
             </p>
           </div>
         </div>
