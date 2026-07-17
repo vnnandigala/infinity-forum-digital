@@ -92,10 +92,10 @@ const WisdomFramework = () => {
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-4 flex items-center justify-center gap-4">
               <GraduationCap className="w-12 h-12 text-amber-500" />
-              Limitless <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Learning</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">WISDOM</span>
             </h2>
             <h3 className="text-2xl font-semibold text-amber-400 mb-8">
-              Living W.I.S.D.O.M.
+              The Foundation for Extraordinary Decisions
             </h3>
             
             <div className="max-w-5xl mx-auto mb-12">
