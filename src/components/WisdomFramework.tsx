@@ -153,6 +153,41 @@ const WisdomFramework = () => {
 
         </div>
 
+        {/* BEYOND Section */}
+        <div className="bg-gradient-to-br from-amber-500/10 to-yellow-600/10 backdrop-blur-sm rounded-3xl p-12 mb-12 border border-amber-400/30">
+          <div className="text-center mb-10">
+            <h2 className="text-5xl font-bold text-white mb-4 flex items-center justify-center gap-4">
+              <Compass className="w-12 h-12 text-amber-500" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">BEYOND</span>
+            </h2>
+            <h3 className="text-2xl font-semibold text-amber-400 mb-8">
+              Where Wisdom Becomes Opportunity
+            </h3>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl text-slate-300 leading-relaxed">
+                BEYOND is where insight meets action. Members apply the wisdom gained through
+                Infinity Forum to curated investments, meaningful relationships, and rare
+                opportunities—turning clarity into momentum and ideas into real-world outcomes.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10">
+              <h4 className="text-lg font-bold text-amber-400 mb-2">Investments</h4>
+              <p className="text-slate-300">Deploy capital into vetted deals and aligned ventures.</p>
+            </div>
+            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10">
+              <h4 className="text-lg font-bold text-amber-400 mb-2">Relationships</h4>
+              <p className="text-slate-300">Build trusted connections with exceptional peers.</p>
+            </div>
+            <div className="text-center p-6 bg-slate-900/40 rounded-2xl border border-white/10">
+              <h4 className="text-lg font-bold text-amber-400 mb-2">Opportunities</h4>
+              <p className="text-slate-300">Access private circles and opportunities reserved for members.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Limitless Impact Section */}
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
           <div className="text-center mb-16">
