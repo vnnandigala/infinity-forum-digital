@@ -155,6 +155,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Marquee (reels) */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* Custom gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #f59e0b, #eab308);

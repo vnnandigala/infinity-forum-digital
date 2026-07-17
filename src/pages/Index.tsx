@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Vision from '../components/Vision';
 import WisdomFramework from '../components/WisdomFramework';
+import ReelsMarquee from '../components/ReelsMarquee';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
         <div className="bg-white">
           <WisdomFramework />
         </div>
+        <ReelsMarquee />
       </div>
       <Footer />
     </div>
