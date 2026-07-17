@@ -80,7 +80,7 @@ const Event = () => {
             
             {/* January 31st Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
-              <h4 className="text-2xl font-semibold text-amber-400 mb-4">January 31st: Holistic Human Well Being</h4>
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">Holistic Human Well Being</h4>
               
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
@@ -105,7 +105,7 @@ const Event = () => {
 
             {/* November 29th Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
-              <h4 className="text-2xl font-semibold text-amber-400 mb-4">November 29th: Deep Dive into Investments</h4>
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">Deep Dive into Investments</h4>
               
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
@@ -130,7 +130,7 @@ const Event = () => {
 
             {/* September 27th Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
-              <h4 className="text-2xl font-semibold text-amber-400 mb-4">September 27th: Wealth Management Re-imagined</h4>
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">Wealth Management Re-imagined</h4>
               
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
