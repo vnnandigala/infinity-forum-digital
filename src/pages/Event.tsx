@@ -29,21 +29,11 @@ const Event = () => {
             
             {/* Event Details Card */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl mb-8">
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div className="flex items-center space-x-4">
-                  <Calendar className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-slate-300 text-sm">Date & Time</p>
-                    <p className="text-white font-semibold">{nextEvent.dateLong}, {nextEvent.timeRange}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-slate-300 text-sm">Location</p>
-                    <p className="text-white font-semibold">{nextEvent.location}</p>
-                  </div>
+              <div className="flex items-center justify-center space-x-4">
+                <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
+                <div className="text-left">
+                  <p className="text-slate-300 text-sm">Location</p>
+                  <p className="text-white font-semibold">{nextEvent.location}</p>
                 </div>
               </div>
             </div>

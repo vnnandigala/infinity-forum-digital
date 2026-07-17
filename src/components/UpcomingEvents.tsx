@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { nextEvent } from '@/config/nextEvent';
@@ -33,16 +33,6 @@ const UpcomingEvents = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-slate-200">
-                    <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">{nextEvent.dateShort}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 text-slate-200">
-                    <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">{nextEvent.timeRange}</span>
-                  </div>
-                  
                   <div className="flex items-center space-x-3 text-slate-200">
                     <MapPin className="w-5 h-5 text-amber-400" />
                     <span className="font-semibold">{nextEvent.location}</span>

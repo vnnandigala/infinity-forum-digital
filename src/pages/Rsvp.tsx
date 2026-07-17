@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Clock, MapPin, ArrowLeft } from 'lucide-react';
+import { MapPin, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -153,16 +153,6 @@ const Rsvp = () => {
                 </h2>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-slate-200">
-                    <Calendar className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">{nextEvent.dateShort}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 text-slate-200">
-                    <Clock className="w-5 h-5 text-amber-400" />
-                    <span className="font-semibold">{nextEvent.timeRange}</span>
-                  </div>
-                  
                   <div className="flex items-center space-x-3 text-slate-200">
                     <MapPin className="w-5 h-5 text-amber-400" />
                     <span className="font-semibold">{nextEvent.location}</span>

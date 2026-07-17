@@ -21,12 +21,10 @@ const EventBanner = () => {
           
           <div className="hidden sm:flex items-center space-x-4 text-sm">
             <span className="font-medium">{nextEvent.title}</span>
-            <span>•</span>
-            <span>{nextEvent.dateCompact}, {nextEvent.timeShort}</span>
           </div>
-          
+
           <div className="sm:hidden text-sm font-medium">
-            {nextEvent.shortTitle} - {nextEvent.dateCompact}
+            {nextEvent.shortTitle}
           </div>
         </div>
         
