@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { BookOpen, Headphones, ExternalLink, Mail, Video } from 'lucide-react';
+import WisdomPerspectives from '@/components/WisdomPerspectives';
 
 const Media = () => {
   const [subscribeOpen, setSubscribeOpen] = useState(false);
