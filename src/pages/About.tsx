@@ -14,8 +14,6 @@ const About = () => {
           <CoreOfferings />
         </div>
         
-        <div className="bg-white py-8"></div>
-        
         <div>
           <FocusAreas />
         </div>
