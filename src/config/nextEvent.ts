@@ -4,11 +4,6 @@
 export const nextEvent = {
   title: 'Ownership and Legacy',
   shortTitle: 'Ownership & Legacy',
-  dateLong: 'Saturday, May 30th, 2026',
-  dateShort: 'May 30th, 2026',
-  dateCompact: 'May 30th',
-  timeRange: '1:00 PM - 5:00 PM EST',
-  timeShort: '1-5 PM',
   location: '1414 Rivona Drive, Waterford, MI 48328',
   locationNote: '(Details sent to confirmed attendees)',
   description:

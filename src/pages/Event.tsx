@@ -29,21 +29,11 @@ const Event = () => {
             
             {/* Event Details Card */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl mb-8">
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div className="flex items-center space-x-4">
-                  <Calendar className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-slate-300 text-sm">Date & Time</p>
-                    <p className="text-white font-semibold">{nextEvent.dateLong}, {nextEvent.timeRange}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
-                  <div>
-                    <p className="text-slate-300 text-sm">Location</p>
-                    <p className="text-white font-semibold">{nextEvent.location}</p>
-                  </div>
+              <div className="flex items-center justify-center space-x-4">
+                <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0" />
+                <div className="text-left">
+                  <p className="text-slate-300 text-sm">Location</p>
+                  <p className="text-white font-semibold">{nextEvent.location}</p>
                 </div>
               </div>
             </div>
@@ -88,9 +78,9 @@ const Event = () => {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-12 text-center">Past Sessions</h3>
             
-            {/* January 31st Session */}
+            {/* Holistic Human Well Being Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
-              <h4 className="text-2xl font-semibold text-amber-400 mb-4">January 31st: Holistic Human Well Being</h4>
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">Holistic Human Well Being</h4>
               
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
@@ -113,9 +103,9 @@ const Event = () => {
               </div>
             </div>
 
-            {/* November 29th Session */}
+            {/* Deep Dive into Investments Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
-              <h4 className="text-2xl font-semibold text-amber-400 mb-4">November 29th: Deep Dive into Investments</h4>
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">Deep Dive into Investments</h4>
               
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
@@ -138,9 +128,9 @@ const Event = () => {
               </div>
             </div>
 
-            {/* September 27th Session */}
+            {/* Wealth Management Re-imagined Session */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
-              <h4 className="text-2xl font-semibold text-amber-400 mb-4">September 27th: Wealth Management Re-imagined</h4>
+              <h4 className="text-2xl font-semibold text-amber-400 mb-4">Wealth Management Re-imagined</h4>
               
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-slate-300">
