@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Vision from '../components/Vision';
 import WisdomFramework from '../components/WisdomFramework';
-import CoreOfferings from '../components/CoreOfferings';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -19,7 +18,6 @@ const Index = () => {
           <WisdomFramework />
         </div>
       </div>
-      <CoreOfferings />
       <Footer />
     </div>
   );
