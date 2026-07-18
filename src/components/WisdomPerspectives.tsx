@@ -10,6 +10,8 @@ type Talk = {
   overview: string;
   icon: React.ComponentType<{ className?: string }>;
   bonus?: boolean;
+  videoUrl?: string;
+  videoId?: string;
 };
 
 const talks: Talk[] = [
