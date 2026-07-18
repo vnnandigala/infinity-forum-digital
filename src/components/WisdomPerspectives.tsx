@@ -1,6 +1,9 @@
 import React from 'react';
 import { Play, Coins, LineChart, Heart, Sparkles, Cpu, Crown, HandHeart } from 'lucide-react';
 
+type DriveVideo = { provider: 'drive'; id: string };
+type YouTubeVideo = { provider?: 'youtube'; id: string };
+
 type Talk = {
   letter: string;
   pillar: string;
