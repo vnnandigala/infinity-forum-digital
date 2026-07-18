@@ -10,6 +10,8 @@ type Talk = {
   overview: string;
   icon: React.ComponentType<{ className?: string }>;
   bonus?: boolean;
+  videoUrl?: string;
+  videoId?: string;
 };
 
 const talks: Talk[] = [
@@ -22,6 +24,8 @@ const talks: Talk[] = [
     overview:
       'Learn proven strategies for building multi-generational wealth through tax-efficient investing, estate planning, trusts, charitable giving, and family governance.',
     icon: Coins,
+    videoId: 'RCd6wXYkJEc',
+    videoUrl: 'https://www.youtube.com/watch?v=RCd6wXYkJEc',
   },
   {
     letter: 'I',
@@ -32,6 +36,8 @@ const talks: Talk[] = [
     overview:
       'Explore investment frameworks across equities, venture capital, private equity, real estate, alternatives, and portfolio construction for long-term wealth creation.',
     icon: LineChart,
+    videoId: 'VSrX6FJtVtQ',
+    videoUrl: 'https://www.youtube.com/watch?v=VSrX6FJtVtQ',
   },
   {
     letter: 'S',
@@ -42,6 +48,8 @@ const talks: Talk[] = [
     overview:
       'Discover how physical health, mental clarity, and spiritual practices create the foundation for sustained success and a meaningful life.',
     icon: Heart,
+    videoId: 'nEnoeoZ9_FE',
+    videoUrl: 'https://www.youtube.com/watch?v=nEnoeoZ9_FE',
   },
   {
     letter: '✦',
@@ -53,36 +61,8 @@ const talks: Talk[] = [
       'Understand how innovation and technology are transforming healthcare while improving patient outcomes and leadership in the industry.',
     icon: Sparkles,
     bonus: true,
-  },
-  {
-    letter: 'D',
-    pillar: 'Disruptions & Innovation',
-    title: 'Artificial Intelligence, Entrepreneurship & the Future',
-    speaker: 'Vihaar Nandigala',
-    credentials: 'Founder & CEO, OrangeSlice (YC W25) | University of Michigan',
-    overview:
-      'Learn how AI, startups, and disruptive technologies are reshaping industries and creating the next generation of billion-dollar companies.',
-    icon: Cpu,
-  },
-  {
-    letter: 'O',
-    pillar: 'Ownership & Legacy',
-    title: 'Leadership, Ownership & Building Your Legacy',
-    speaker: 'Esther Acosta',
-    credentials: 'Harvard University | Executive Leadership & Governance Advisor',
-    overview:
-      'Gain insights into executive leadership, ownership thinking, governance, and creating a legacy that extends beyond financial success.',
-    icon: Crown,
-  },
-  {
-    letter: 'M',
-    pillar: 'Mentorship & Giving Back',
-    title: 'Mentorship, Community & Creating Impact',
-    speaker: 'Poondla Siddharth Reddy',
-    credentials: 'Entrepreneur | Investor | Founder, Janana Foundation',
-    overview:
-      'Learn how mentorship, community building, and purposeful philanthropy can multiply success while creating opportunities for future generations.',
-    icon: HandHeart,
+    videoId: 'w1TU_6h7xyI',
+    videoUrl: 'https://www.youtube.com/watch?v=w1TU_6h7xyI',
   },
 ];
 
@@ -111,27 +91,38 @@ const WisdomPerspectives = () => {
                     : 'bg-slate-800/70 border-slate-700/60 hover:border-amber-500/40'
                 }`}
               >
-                {/* Placeholder video slot */}
-                <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-yellow-500/5"></div>
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                {/* Video */}
+                <div className="relative aspect-video bg-black overflow-hidden">
+                  {talk.videoId ? (
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${talk.videoId}`}
+                      title={talk.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-black">
+                      <div className="w-16 h-16 rounded-full bg-amber-500/90 flex items-center justify-center shadow-2xl">
+                        <Play className="w-7 h-7 text-slate-900 ml-1" fill="currentColor" />
+                      </div>
+                      <span className="absolute bottom-3 right-4 text-xs text-slate-500 italic">Coming soon</span>
+                    </div>
+                  )}
+                  <div className="absolute top-3 left-3 flex items-center gap-2 z-10 pointer-events-none">
                     <span
-                      className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg ${
+                      className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg shadow-lg ${
                         talk.bonus
-                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                          ? 'bg-amber-500/90 text-slate-900 border border-amber-300'
                           : 'bg-gradient-to-br from-amber-500 to-yellow-600 text-slate-900'
                       }`}
                     >
                       {talk.letter}
                     </span>
-                    <span className="text-xs uppercase tracking-widest text-slate-400">
+                    <span className="text-[10px] uppercase tracking-widest text-white bg-slate-900/70 px-2 py-1 rounded">
                       {talk.pillar}
                     </span>
                   </div>
-                  <div className="w-16 h-16 rounded-full bg-amber-500/90 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                    <Play className="w-7 h-7 text-slate-900 ml-1" fill="currentColor" />
-                  </div>
-                  <span className="absolute bottom-3 right-4 text-xs text-slate-500 italic">Coming soon</span>
                 </div>
 
                 <div className="p-6">
