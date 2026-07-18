@@ -45,8 +45,8 @@ const Hero = () => {
             </h1>
 
             {/* Tagline */}
-            <p className="text-2xl md:text-3xl text-slate-200 mb-6 font-light animate-fade-in animate-delay-200">
-              Wisdom. Beyond. Impact.
+            <p className="text-xl md:text-2xl text-slate-200 mb-6 font-light animate-fade-in animate-delay-200 leading-relaxed">
+              A community of exceptional individuals on a journey from WISDOM to BEYOND to IMPACT—learning with purpose, building with intention, and creating an enduring legacy for generations to come.
             </p>
 
             {/* Description */}
