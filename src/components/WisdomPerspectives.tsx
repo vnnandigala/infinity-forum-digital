@@ -12,6 +12,7 @@ type Talk = {
   bonus?: boolean;
   videoUrl?: string;
   videoId?: string;
+  driveId?: string;
 };
 
 const talks: Talk[] = [
@@ -76,6 +77,28 @@ const talks: Talk[] = [
     videoId: 'P2u-U_5Ij1c',
     videoUrl: 'https://www.youtube.com/watch?v=P2u-U_5Ij1c',
   },
+  {
+    letter: 'D',
+    pillar: 'Disruptions & Innovation',
+    title: 'Disruptions, Innovation & the Future',
+    speaker: 'Vihaar',
+    credentials: 'Innovator | Speaker',
+    overview:
+      'A perspective on disruption, emerging technologies, and how innovation shapes the future of industries and leadership.',
+    icon: Cpu,
+    driveId: '1Z7QsKr18lciWFsYXTw9VJSt8ZmznJVqf',
+  },
+  {
+    letter: 'O',
+    pillar: 'Ownership & Legacy',
+    title: 'Ownership, Purpose & Legacy',
+    speaker: 'Esther',
+    credentials: 'Leader | Speaker',
+    overview:
+      'Reflections on ownership, purpose-driven leadership, and building a legacy that endures across generations.',
+    icon: Crown,
+    driveId: '1aPzBcxpIh71t-WUogSYIr2jDtphlV7YY',
+  },
 ];
 
 const WisdomPerspectives = () => {
@@ -111,6 +134,14 @@ const WisdomPerspectives = () => {
                       src={`https://www.youtube.com/embed/${talk.videoId}`}
                       title={talk.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : talk.driveId ? (
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://drive.google.com/file/d/${talk.driveId}/preview`}
+                      title={talk.title}
+                      allow="autoplay"
                       allowFullScreen
                     />
                   ) : (
