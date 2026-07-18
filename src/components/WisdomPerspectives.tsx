@@ -64,6 +64,18 @@ const talks: Talk[] = [
     videoId: 'w1TU_6h7xyI',
     videoUrl: 'https://www.youtube.com/watch?v=w1TU_6h7xyI',
   },
+  {
+    letter: 'M',
+    pillar: 'Mentorship & Giving Back',
+    title: 'Mentorship, Community & Creating Impact',
+    speaker: 'Poondla Siddharth Reddy',
+    credentials: 'Entrepreneur | Investor | Founder, Janana Foundation',
+    overview:
+      'Learn how mentorship, community building, and purposeful philanthropy can multiply success while creating opportunities for future generations.',
+    icon: HandHeart,
+    videoId: 'P2u-U_5Ij1c',
+    videoUrl: 'https://www.youtube.com/watch?v=P2u-U_5Ij1c',
+  },
 ];
 
 const WisdomPerspectives = () => {
