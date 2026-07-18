@@ -136,6 +136,14 @@ const WisdomPerspectives = () => {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
+                  ) : talk.driveId ? (
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://drive.google.com/file/d/${talk.driveId}/preview`}
+                      title={talk.title}
+                      allow="autoplay"
+                      allowFullScreen
+                    />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-black">
                       <div className="w-16 h-16 rounded-full bg-amber-500/90 flex items-center justify-center shadow-2xl">
